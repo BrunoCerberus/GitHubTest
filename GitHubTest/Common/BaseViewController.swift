@@ -46,7 +46,7 @@ class BaseViewController: UIViewController {
     }
     
     func setupNavigationWithCloseButton() {
-        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.barTintColor = .imNavigationBarTintColor
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.isTranslucent = false
         setupDismissLeftBarButtonItem()

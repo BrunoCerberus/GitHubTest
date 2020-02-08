@@ -24,9 +24,9 @@ class IMNavigationViewController: UINavigationController {
     }
     
     func defaultNavigationStyle() {
-        navigationBar.barTintColor              = .black
-        navigationBar.tintColor                 = .black
-        navigationBar.titleTextAttributes       = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        navigationBar.barTintColor              = .imNavigationColor
+        navigationBar.tintColor                 = .imNavigationBarTintColor
+        navigationBar.titleTextAttributes       = [NSAttributedString.Key.foregroundColor: UIColor.imTitleTextAttributes]
         navigationBar.isTranslucent             = false
         navigationBar.shadowImage               = UIImage()
         navigationBar.setBackgroundImage(UIImage(), for: .default)

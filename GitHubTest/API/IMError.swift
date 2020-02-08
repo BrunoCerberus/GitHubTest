@@ -24,4 +24,3 @@ struct IMError: Error {
         self.code = code
     }
 }
-

@@ -32,7 +32,7 @@ class AppCoordinator: BaseCoordinator {
     
     required init(window: UIWindow) {
         self.window = window
-        self.window.backgroundColor = .black
+        self.window.backgroundColor = .imBackgroundComponent
         self.window.makeKeyAndVisible()
         self.foregroundWindow = UIWindow(frame: UIScreen.main.bounds)
     }

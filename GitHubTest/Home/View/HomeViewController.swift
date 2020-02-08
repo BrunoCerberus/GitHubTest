@@ -16,6 +16,7 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
 
         viewModel.viewDelegate = self
+        title = "GitHub"
     }
     
     init(viewModel: HomeViewModel) {

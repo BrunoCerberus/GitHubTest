@@ -11,6 +11,12 @@
 		1554904423EF5BAD0025D97D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554904323EF5BAD0025D97D /* Reachability.swift */; };
 		1554904623EF5C0D0025D97D /* IMError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554904523EF5C0D0025D97D /* IMError.swift */; };
 		1554904823EF5D8A0025D97D /* Dictionary+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554904723EF5D8A0025D97D /* Dictionary+Utils.swift */; };
+		1554904A23EF675E0025D97D /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554904923EF675E0025D97D /* UITableView+Utils.swift */; };
+		1554904C23EF67A20025D97D /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554904B23EF67A20025D97D /* UIView+Utils.swift */; };
+		1554904E23EF67D90025D97D /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554904D23EF67D90025D97D /* UIColor+Utils.swift */; };
+		1554905023EF682F0025D97D /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554904F23EF682F0025D97D /* String+Utils.swift */; };
+		1554905223EF6D680025D97D /* ActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554905123EF6D680025D97D /* ActivityManager.swift */; };
+		1554905423EF6E340025D97D /* UICollectionView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554905323EF6E340025D97D /* UICollectionView+Utils.swift */; };
 		158076F523EF12F0007A6711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158076F423EF12F0007A6711 /* AppDelegate.swift */; };
 		158076FE23EF12F2007A6711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 158076FD23EF12F2007A6711 /* Assets.xcassets */; };
 		1580770123EF12F2007A6711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158076FF23EF12F2007A6711 /* LaunchScreen.storyboard */; };
@@ -48,6 +54,12 @@
 		1554904323EF5BAD0025D97D /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		1554904523EF5C0D0025D97D /* IMError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMError.swift; sourceTree = "<group>"; };
 		1554904723EF5D8A0025D97D /* Dictionary+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Utils.swift"; sourceTree = "<group>"; };
+		1554904923EF675E0025D97D /* UITableView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Utils.swift"; sourceTree = "<group>"; };
+		1554904B23EF67A20025D97D /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
+		1554904D23EF67D90025D97D /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
+		1554904F23EF682F0025D97D /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
+		1554905123EF6D680025D97D /* ActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityManager.swift; sourceTree = "<group>"; };
+		1554905323EF6E340025D97D /* UICollectionView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Utils.swift"; sourceTree = "<group>"; };
 		158076F123EF12F0007A6711 /* GitHubTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		158076F423EF12F0007A6711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		158076FD23EF12F2007A6711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -216,6 +228,7 @@
 				1580772123EF166D007A6711 /* IMNavigationController.swift */,
 				1580772C23EF18DB007A6711 /* BaseViewController.swift */,
 				1580772E23EF194B007A6711 /* AlertManager.swift */,
+				1554905123EF6D680025D97D /* ActivityManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -226,6 +239,11 @@
 				1580772423EF16FC007A6711 /* UIBarButtonItem+Utils.swift */,
 				1580773023EF1DBC007A6711 /* UIViewController+Utils.swift */,
 				1554904723EF5D8A0025D97D /* Dictionary+Utils.swift */,
+				1554904923EF675E0025D97D /* UITableView+Utils.swift */,
+				1554904B23EF67A20025D97D /* UIView+Utils.swift */,
+				1554904D23EF67D90025D97D /* UIColor+Utils.swift */,
+				1554904F23EF682F0025D97D /* String+Utils.swift */,
+				1554905323EF6E340025D97D /* UICollectionView+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -355,12 +373,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1580774123EF5576007A6711 /* IMCodable.swift in Sources */,
+				1554905423EF6E340025D97D /* UICollectionView+Utils.swift in Sources */,
+				1554905023EF682F0025D97D /* String+Utils.swift in Sources */,
 				1580773123EF1DBC007A6711 /* UIViewController+Utils.swift in Sources */,
 				1580773923EF1ECB007A6711 /* HomeViewModel.swift in Sources */,
 				1554904823EF5D8A0025D97D /* Dictionary+Utils.swift in Sources */,
 				1580772523EF16FC007A6711 /* UIBarButtonItem+Utils.swift in Sources */,
 				158076F523EF12F0007A6711 /* AppDelegate.swift in Sources */,
 				1554904023EF59560025D97D /* IMConfig.swift in Sources */,
+				1554905223EF6D680025D97D /* ActivityManager.swift in Sources */,
 				1554904623EF5C0D0025D97D /* IMError.swift in Sources */,
 				1554904423EF5BAD0025D97D /* Reachability.swift in Sources */,
 				1580772723EF171B007A6711 /* AppCoordinator.swift in Sources */,
@@ -370,9 +391,12 @@
 				1580773423EF1E53007A6711 /* HomeViewController.swift in Sources */,
 				1580772223EF166D007A6711 /* IMNavigationController.swift in Sources */,
 				1580773723EF1EA6007A6711 /* HomeCoordinator.swift in Sources */,
+				1554904C23EF67A20025D97D /* UIView+Utils.swift in Sources */,
+				1554904E23EF67D90025D97D /* UIColor+Utils.swift in Sources */,
 				1580772F23EF194B007A6711 /* AlertManager.swift in Sources */,
 				1580773F23EF52B1007A6711 /* Fetcher.swift in Sources */,
 				1580772D23EF18DB007A6711 /* BaseViewController.swift in Sources */,
+				1554904A23EF675E0025D97D /* UITableView+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
