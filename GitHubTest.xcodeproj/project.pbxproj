@@ -11,6 +11,8 @@
 		1530268B23EF761D00B4F2D0 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15A010ED23EF749500FF8F9C /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1530268D23EF762500B4F2D0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A010F123EF749900FF8F9C /* RxCocoa.framework */; };
 		1530268E23EF762500B4F2D0 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15A010F123EF749900FF8F9C /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1530269123EF7B1900B4F2D0 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1530269023EF7B1900B4F2D0 /* RxRelay.framework */; };
+		1530269223EF7B1900B4F2D0 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1530269023EF7B1900B4F2D0 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1554904023EF59560025D97D /* IMConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554903F23EF59560025D97D /* IMConfig.swift */; };
 		1554904423EF5BAD0025D97D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554904323EF5BAD0025D97D /* Reachability.swift */; };
 		1554904623EF5C0D0025D97D /* IMError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554904523EF5C0D0025D97D /* IMError.swift */; };
@@ -62,6 +64,7 @@
 			files = (
 				1530268E23EF762500B4F2D0 /* RxCocoa.framework in Embed Frameworks */,
 				1530268B23EF761D00B4F2D0 /* RxSwift.framework in Embed Frameworks */,
+				1530269223EF7B1900B4F2D0 /* RxRelay.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +72,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1530269023EF7B1900B4F2D0 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		1554903F23EF59560025D97D /* IMConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMConfig.swift; sourceTree = "<group>"; };
 		1554904323EF5BAD0025D97D /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		1554904523EF5C0D0025D97D /* IMError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMError.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 			files = (
 				1530268D23EF762500B4F2D0 /* RxCocoa.framework in Frameworks */,
 				1530268A23EF761D00B4F2D0 /* RxSwift.framework in Frameworks */,
+				1530269123EF7B1900B4F2D0 /* RxRelay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +281,7 @@
 		15A010E723EF713B00FF8F9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1530269023EF7B1900B4F2D0 /* RxRelay.framework */,
 				15A010F123EF749900FF8F9C /* RxCocoa.framework */,
 				15A010ED23EF749500FF8F9C /* RxSwift.framework */,
 				15A010E823EF713B00FF8F9C /* RxBlocking.framework */,
@@ -394,6 +400,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
@@ -612,6 +619,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = GitHubTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -634,6 +642,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = GitHubTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
