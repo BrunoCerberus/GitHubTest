@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1554904023EF59560025D97D /* IMConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554903F23EF59560025D97D /* IMConfig.swift */; };
+		1554904423EF5BAD0025D97D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554904323EF5BAD0025D97D /* Reachability.swift */; };
+		1554904623EF5C0D0025D97D /* IMError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554904523EF5C0D0025D97D /* IMError.swift */; };
+		1554904823EF5D8A0025D97D /* Dictionary+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554904723EF5D8A0025D97D /* Dictionary+Utils.swift */; };
 		158076F523EF12F0007A6711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158076F423EF12F0007A6711 /* AppDelegate.swift */; };
 		158076FE23EF12F2007A6711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 158076FD23EF12F2007A6711 /* Assets.xcassets */; };
 		1580770123EF12F2007A6711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158076FF23EF12F2007A6711 /* LaunchScreen.storyboard */; };
@@ -24,6 +28,9 @@
 		1580773923EF1ECB007A6711 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580773823EF1ECB007A6711 /* HomeViewModel.swift */; };
 		1580773C23EF24A0007A6711 /* RepoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580773A23EF24A0007A6711 /* RepoDetailViewController.swift */; };
 		1580773D23EF24A0007A6711 /* RepoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1580773B23EF24A0007A6711 /* RepoDetailViewController.xib */; };
+		1580773F23EF52B1007A6711 /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580773E23EF52B1007A6711 /* Fetcher.swift */; };
+		1580774123EF5576007A6711 /* IMCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580774023EF5576007A6711 /* IMCodable.swift */; };
+		1580774323EF55A7007A6711 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580774223EF55A7007A6711 /* BaseService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1554903F23EF59560025D97D /* IMConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMConfig.swift; sourceTree = "<group>"; };
+		1554904323EF5BAD0025D97D /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		1554904523EF5C0D0025D97D /* IMError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMError.swift; sourceTree = "<group>"; };
+		1554904723EF5D8A0025D97D /* Dictionary+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Utils.swift"; sourceTree = "<group>"; };
 		158076F123EF12F0007A6711 /* GitHubTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		158076F423EF12F0007A6711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		158076FD23EF12F2007A6711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +69,9 @@
 		1580773823EF1ECB007A6711 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1580773A23EF24A0007A6711 /* RepoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailViewController.swift; sourceTree = "<group>"; };
 		1580773B23EF24A0007A6711 /* RepoDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoDetailViewController.xib; sourceTree = "<group>"; };
+		1580773E23EF52B1007A6711 /* Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
+		1580774023EF5576007A6711 /* IMCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMCodable.swift; sourceTree = "<group>"; };
+		1580774223EF55A7007A6711 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +191,12 @@
 		1580771C23EF1450007A6711 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				1580773E23EF52B1007A6711 /* Fetcher.swift */,
+				1580774023EF5576007A6711 /* IMCodable.swift */,
+				1580774223EF55A7007A6711 /* BaseService.swift */,
+				1554903F23EF59560025D97D /* IMConfig.swift */,
+				1554904323EF5BAD0025D97D /* Reachability.swift */,
+				1554904523EF5C0D0025D97D /* IMError.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -205,6 +225,7 @@
 			children = (
 				1580772423EF16FC007A6711 /* UIBarButtonItem+Utils.swift */,
 				1580773023EF1DBC007A6711 /* UIViewController+Utils.swift */,
+				1554904723EF5D8A0025D97D /* Dictionary+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -219,6 +240,7 @@
 				158076ED23EF12F0007A6711 /* Sources */,
 				158076EE23EF12F0007A6711 /* Frameworks */,
 				158076EF23EF12F0007A6711 /* Resources */,
+				1580774423EF56BF007A6711 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -306,22 +328,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1580774423EF56BF007A6711 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		158076ED23EF12F0007A6711 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1580774123EF5576007A6711 /* IMCodable.swift in Sources */,
 				1580773123EF1DBC007A6711 /* UIViewController+Utils.swift in Sources */,
 				1580773923EF1ECB007A6711 /* HomeViewModel.swift in Sources */,
+				1554904823EF5D8A0025D97D /* Dictionary+Utils.swift in Sources */,
 				1580772523EF16FC007A6711 /* UIBarButtonItem+Utils.swift in Sources */,
 				158076F523EF12F0007A6711 /* AppDelegate.swift in Sources */,
+				1554904023EF59560025D97D /* IMConfig.swift in Sources */,
+				1554904623EF5C0D0025D97D /* IMError.swift in Sources */,
+				1554904423EF5BAD0025D97D /* Reachability.swift in Sources */,
 				1580772723EF171B007A6711 /* AppCoordinator.swift in Sources */,
 				1580773C23EF24A0007A6711 /* RepoDetailViewController.swift in Sources */,
 				1580771F23EF15EE007A6711 /* BaseCoordinator.swift in Sources */,
+				1580774323EF55A7007A6711 /* BaseService.swift in Sources */,
 				1580773423EF1E53007A6711 /* HomeViewController.swift in Sources */,
 				1580772223EF166D007A6711 /* IMNavigationController.swift in Sources */,
 				1580773723EF1EA6007A6711 /* HomeCoordinator.swift in Sources */,
 				1580772F23EF194B007A6711 /* AlertManager.swift in Sources */,
+				1580773F23EF52B1007A6711 /* Fetcher.swift in Sources */,
 				1580772D23EF18DB007A6711 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

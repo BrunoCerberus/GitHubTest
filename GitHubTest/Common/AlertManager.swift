@@ -159,5 +159,3 @@ class AlertManager {
         alertController?.dismiss(animated: true, completion: nil)
     }
 }
-
-

@@ -98,4 +98,3 @@ extension BaseCoordinator {
             UIBarButtonItem.createCloseButton(withImage: image, andAction: action)
     }
 }
-
