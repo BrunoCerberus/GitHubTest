@@ -2,7 +2,7 @@
  
 ## Development Roadmap
 
-- [x] Swift
+- [x] Swift 5+
 - [x] Codable
 - [x] MVVM
 - [x] Coordinator
