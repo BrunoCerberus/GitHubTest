@@ -16,7 +16,7 @@ extension HomeAPI: Fetcher {
     var path: String {
         switch self {
         case .reposList:
-            return "/now_playing"
+            return "/orgs/octokit/repos"
         }
     }
     
