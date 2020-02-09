@@ -13,7 +13,7 @@ protocol HomeViewModelCoordinatorDelegate: AnyObject {
 }
 
 protocol HomeViewModelViewDelegate: AnyObject {
-    
+    func homeViewModel(_ viewModel: HomeViewModel, didFetch repos: Result<Any?, IMError>)
 }
 
 class HomeViewModel {
@@ -21,7 +21,24 @@ class HomeViewModel {
     weak var coordinatorDelegate: HomeViewModelCoordinatorDelegate?
     weak var viewDelegate: HomeViewModelViewDelegate?
     
+    var homeService: HomeService!
+    
+    init() {
+        homeService = HomeService()
+    }
+    
     func showRepoDetail() {
         coordinatorDelegate?.homeViewModel(self, show: nil)
     }
+    
+    func requesReposList() {
+           homeService.getRepos(onSuccess: { [weak self] repos in
+            guard let self = self else { return }
+            self.viewDelegate?.homeViewModel(self, didFetch: .success(nil))
+           }, onFail: { (error) in
+            self.viewDelegate?.homeViewModel(self, didFetch: .failure(IMError(title: "Error",
+                                                                              description: error,
+                                                                              code: 0)))
+           })
+       }
 }

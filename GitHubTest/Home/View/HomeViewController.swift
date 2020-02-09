@@ -19,6 +19,12 @@ class HomeViewController: BaseViewController {
         title = "GitHub"
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewModel.requesReposList()
+    }
+    
     init(viewModel: HomeViewModel) {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
@@ -34,5 +40,7 @@ class HomeViewController: BaseViewController {
 }
 
 extension HomeViewController: HomeViewModelViewDelegate {
-    
+    func homeViewModel(_ viewModel: HomeViewModel, didFetch repos: Result<Any?, IMError>) {
+        
+    }
 }

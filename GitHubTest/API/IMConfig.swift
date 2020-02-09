@@ -12,9 +12,9 @@ typealias CompletionSuccess = (() -> Void)?
 
 class IMConfig<T: Fetcher> {
     
-    public func fetch<V: IMCodable>(target: T,
-                                    dataType: V.Type,
-                                    completion: ((Result<V, Error>, URLResponse?) -> Void)?) {
+    public func fetch<V: Codable>(target: T,
+                                  dataType: V.Type,
+                                  completion: ((Result<V, Error>, URLResponse?) -> Void)?) {
         
         if !Reachability.isConnectedToNetwork() {
             completion?(.failure(IMError()), nil)
@@ -45,7 +45,7 @@ class IMConfig<T: Fetcher> {
         }
         
         session.dataTask(with: request) { (dataRequest, response, error) in
-            guard let data = dataRequest, let decodedResponse = try? JSONDecoder().decode(dataType.self, from: data) else {
+            guard let data = dataRequest else {
                 print("\n\n===========Error===========")
                 print("Error Code: \(error?._code ?? 0)")
                 print("Error Messsage: \(error?.localizedDescription ?? "")")
@@ -57,7 +57,18 @@ class IMConfig<T: Fetcher> {
                 completion?(.failure(IMError()), nil)
                 return
             }
-            completion?(.success(decodedResponse), response)
+            do {
+                let decodedResponse = try JSONDecoder().decode(dataType.self, from: data)
+                completion?(.success(decodedResponse), response)
+            } catch let error {
+                print("\n\n===========Error===========")
+                print("Error Code: \(error._code)")
+                print("Error Messsage: \(error.localizedDescription )")
+                debugPrint(error as Any)
+                print("===========================\n\n")
+                completion?(.failure(IMError()), nil)
+                return
+            }
         }.resume()
     }
 }
