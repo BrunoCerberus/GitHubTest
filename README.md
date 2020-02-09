@@ -1,10 +1,15 @@
 # GitHubTest
+
+## Requirements for executing
+- Xcode 11.3.1
+- SwiftLint
  
 ## Development Roadmap
 
 - [x] Swift 5+
 - [x] Codable
 - [x] MVVM
+- [x] Xib
 - [x] Coordinator
 - [ ] Unit Tests
 - [x] Network layer
@@ -13,6 +18,7 @@
 - [x] Code Analyser (Swiftlint)
 - [x] POP
 - [ ] RxSwift
+- [ ] High Order Function
 
 ## Features
 - [ ] Home
