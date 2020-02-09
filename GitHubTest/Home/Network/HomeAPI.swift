@@ -9,14 +9,14 @@
 import Foundation
 
 enum HomeAPI {
-    case reposList
+    case reposList(page: Int)
 }
 
 extension HomeAPI: Fetcher {
     var path: String {
         switch self {
-        case .reposList:
-            return "/orgs/octokit/repos"
+        case .reposList(let page):
+            return "/orgs/octokit/repos?page=\(page)&per_page=10"
         }
     }
     

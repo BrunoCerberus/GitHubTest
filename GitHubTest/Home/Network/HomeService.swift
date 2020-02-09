@@ -9,8 +9,8 @@
 import Foundation
 
 class HomeService: IMConfig<HomeAPI> {
-    func getRepos(onSuccess: @escaping ([RepositoryElement]) -> Void, onFail: @escaping (String) -> Void) {
-        fetch(target: .reposList, dataType: [RepositoryElement].self) { (result, _) in
+    func getRepos(with page: Int = 1, onSuccess: @escaping ([RepositoryElement]) -> Void, onFail: @escaping (String) -> Void) {
+        fetch(target: .reposList(page: page), dataType: [RepositoryElement].self) { (result, _) in
             switch result {
             case .success(let repos):
                 onSuccess(repos)

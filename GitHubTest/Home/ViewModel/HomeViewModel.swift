@@ -32,7 +32,7 @@ class HomeViewModel {
     }
     
     func requesReposList() {
-           homeService.getRepos(onSuccess: { [weak self] repos in
+        homeService.getRepos(with: 1, onSuccess: { [weak self] repos in
             guard let self = self else { return }
             self.viewDelegate?.homeViewModel(self, didFetch: .success(nil))
            }, onFail: { (error) in
