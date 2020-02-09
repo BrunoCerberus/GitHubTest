@@ -17,7 +17,7 @@ class IMConfig<T: Fetcher> {
                                   completion: ((Result<V, Error>, URLResponse?) -> Void)?) {
         
         if !Reachability.isConnectedToNetwork() {
-            completion?(.failure(IMError()), nil)
+            completion?(.failure(IMError.connection), nil)
             return
         }
         
@@ -25,7 +25,7 @@ class IMConfig<T: Fetcher> {
         let parameters = target.task?.dictionary() ?? [:]
         let method = target.method
         guard let urlRequest = URL(string: url) else {
-            completion?(.failure(IMError()), nil)
+            completion?(.failure(IMError.generic), nil)
             return
         }
         
@@ -54,7 +54,7 @@ class IMConfig<T: Fetcher> {
                 }
                 debugPrint(error as Any)
                 print("===========================\n\n")
-                completion?(.failure(IMError()), nil)
+                completion?(.failure(IMError.generic), nil)
                 return
             }
             do {
@@ -66,7 +66,7 @@ class IMConfig<T: Fetcher> {
                 print("Error Messsage: \(error.localizedDescription )")
                 debugPrint(error as Any)
                 print("===========================\n\n")
-                completion?(.failure(IMError()), nil)
+                completion?(.failure(IMError.parse), nil)
                 return
             }
         }.resume()

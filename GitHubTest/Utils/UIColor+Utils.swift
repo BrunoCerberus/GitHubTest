@@ -15,6 +15,7 @@ extension UIColor {
     public static let imActivityIndicator = UIColor.white
     public static let imNavigationBarTintColor = UIColor.white
     public static let imTitleTextAttributes = UIColor.white
+    public static let imActivityIndicatorPullToRefresh = UIColor(hex6: 0x242528)
 
     // MARK: - Initializer
     
