@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 final class HomeCoordinator: BaseCoordinator {
     
@@ -22,8 +23,13 @@ final class HomeCoordinator: BaseCoordinator {
         return UIApplication.shared.delegate as? AppDelegate
     }
     
+    lazy var screenWidth: CGFloat = {
+        return UIScreen.main.bounds.width
+    }()
+    
     // MARK: Controllers
     private var detailViewController: RepoDetailViewController!
+    private var filtersViewController: FiltersViewController!
     
     func start() {
         viewModel = HomeViewModel()
@@ -47,11 +53,22 @@ final class HomeCoordinator: BaseCoordinator {
     private func showRepoDetail(_ repo: Any?) {
         guard let navigationController = navigation else { return }
         detailViewController = RepoDetailViewController()
-        navigationController.present(detailViewController, animated: true, completion: nil)
+        let destinationNavigationController = IMNavigationViewController(rootViewController: detailViewController)
+        navigationController.present(destinationNavigationController, animated: true, completion: nil)
+    }
+    
+    @objc private func showFilters() {
+        guard let navigationController = navigation else { return }
+        filtersViewController = FiltersViewController()
+        navigationController.pushViewController(filtersViewController, animated: true)
     }
 }
 
 extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
+    func homeViewModelShowFilters(_ viewModel: HomeViewModel) {
+        showFilters()
+    }
+    
     func homeViewModel(_ viewModel: HomeViewModel, show repoDetail: Any?) {
         showRepoDetail(repoDetail)
     }

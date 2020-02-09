@@ -10,6 +10,7 @@ import Foundation
 
 protocol HomeViewModelCoordinatorDelegate: AnyObject {
     func homeViewModel(_ viewModel: HomeViewModel, show repoDetail: Any?)
+    func homeViewModelShowFilters(_ viewModel: HomeViewModel)
 }
 
 protocol HomeViewModelViewDelegate: AnyObject {
@@ -38,8 +39,12 @@ class HomeViewModel {
             guard let self = self else { return }
             self.repoList = repos
             self.viewDelegate?.homeViewModel(self, didFetch: .success(nil))
-           }, onFail: { _ in
-            self.viewDelegate?.homeViewModel(self, didFetch: .failure(IMError.generic))
-           })
-       }
+            }, onFail: { _ in
+                self.viewDelegate?.homeViewModel(self, didFetch: .failure(IMError.generic))
+        })
+    }
+    
+    func showFilters() {
+        coordinatorDelegate?.homeViewModelShowFilters(self)
+    }
 }

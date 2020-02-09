@@ -22,7 +22,7 @@ class IMNavigationViewController: UINavigationController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
+
     func defaultNavigationStyle() {
         navigationBar.barTintColor              = .imNavigationColor
         navigationBar.tintColor                 = .imNavigationBarTintColor

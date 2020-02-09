@@ -25,7 +25,7 @@ extension UIViewController {
     }
     
     func setupLeftCloseBarButtonItem() {
-        let img = UIImage(named: "BTN_VOLTAR")
+        let img = UIImage(named: "BTN_CLOSE")
         navigationItem.hidesBackButton = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: img,
                                                            landscapeImagePhone: img,
@@ -35,7 +35,7 @@ extension UIViewController {
     }
     
     func navigationPopToRoot() {
-        let img = UIImage(named: "BTN_VOLTAR")
+        let img = UIImage(named: "BTN_BACK")
         navigationItem.hidesBackButton = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: img,
                                                            landscapeImagePhone: img,
@@ -45,7 +45,7 @@ extension UIViewController {
     }
     
     func defaultBackButton() {
-        let img = UIImage(named: "BTN_VOLTAR")
+        let img = UIImage(named: "BTN_ARROW_BACK")
         navigationItem.hidesBackButton = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: img,
                                                            landscapeImagePhone: img,

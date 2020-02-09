@@ -29,7 +29,17 @@ final class HomeViewController: BaseViewController {
         viewModel.viewDelegate = self
         title = "GitHub"
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ICO_FILTER"),
+                                                            landscapeImagePhone: nil,
+                                                            style: .done,
+                                                            target: self,
+                                                            action: #selector(showFilters))
+        
         setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func setup() {
@@ -74,13 +84,15 @@ final class HomeViewController: BaseViewController {
         }
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    @objc private func showFilters() {
+        viewModel.showFilters()
     }
 }
 
 extension HomeViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.showRepoDetail()
+    }
 }
 
 extension HomeViewController: UICollectionViewDataSource {
