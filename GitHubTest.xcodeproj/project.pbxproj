@@ -43,6 +43,9 @@
 		1580773F23EF52B1007A6711 /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580773E23EF52B1007A6711 /* Fetcher.swift */; };
 		1580774123EF5576007A6711 /* IMCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580774023EF5576007A6711 /* IMCodable.swift */; };
 		1580774323EF55A7007A6711 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580774223EF55A7007A6711 /* BaseService.swift */; };
+		15A6D76823F0591400B0513A /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A6D76723F0591400B0513A /* HomeService.swift */; };
+		15A6D76A23F0591E00B0513A /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A6D76923F0591E00B0513A /* HomeAPI.swift */; };
+		15A6D76C23F05B1D00B0513A /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A6D76B23F05B1D00B0513A /* RepositoryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +113,9 @@
 		15A010E823EF713B00FF8F9C /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		15A010ED23EF749500FF8F9C /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		15A010F123EF749900FF8F9C /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		15A6D76723F0591400B0513A /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		15A6D76923F0591E00B0513A /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
+		15A6D76B23F05B1D00B0513A /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +206,7 @@
 		1580771823EF1408007A6711 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				15A6D76B23F05B1D00B0513A /* RepositoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -226,6 +233,8 @@
 		1580771B23EF1424007A6711 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				15A6D76723F0591400B0513A /* HomeService.swift */,
+				15A6D76923F0591E00B0513A /* HomeAPI.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -441,13 +450,16 @@
 				1554905023EF682F0025D97D /* String+Utils.swift in Sources */,
 				1580773123EF1DBC007A6711 /* UIViewController+Utils.swift in Sources */,
 				1580773923EF1ECB007A6711 /* HomeViewModel.swift in Sources */,
+				15A6D76C23F05B1D00B0513A /* RepositoryModel.swift in Sources */,
 				1554904823EF5D8A0025D97D /* Dictionary+Utils.swift in Sources */,
 				1580772523EF16FC007A6711 /* UIBarButtonItem+Utils.swift in Sources */,
 				158076F523EF12F0007A6711 /* AppDelegate.swift in Sources */,
+				15A6D76823F0591400B0513A /* HomeService.swift in Sources */,
 				1554904023EF59560025D97D /* IMConfig.swift in Sources */,
 				1554905223EF6D680025D97D /* ActivityManager.swift in Sources */,
 				1554904623EF5C0D0025D97D /* IMError.swift in Sources */,
 				1554904423EF5BAD0025D97D /* Reachability.swift in Sources */,
+				15A6D76A23F0591E00B0513A /* HomeAPI.swift in Sources */,
 				1580772723EF171B007A6711 /* AppCoordinator.swift in Sources */,
 				1580773C23EF24A0007A6711 /* RepoDetailViewController.swift in Sources */,
 				1580771F23EF15EE007A6711 /* BaseCoordinator.swift in Sources */,
