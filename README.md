@@ -1,6 +1,6 @@
 # GitHubTest
 
-## Requirements for executing
+## Requirements for running this project
 - Xcode 11.3.1
 - SwiftLint
  
