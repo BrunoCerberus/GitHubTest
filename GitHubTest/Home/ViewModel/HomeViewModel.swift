@@ -24,10 +24,18 @@ class HomeViewModel {
     
     var homeService: HomeService!
     
-    var repoList: [RepositoryElement]!
+    var repoList: [RepositoryElement]?
+    
+    var numberOfRepos: Int {
+        return repoList?.count ?? 0
+    }
     
     init() {
         homeService = HomeService()
+    }
+    
+    func getRepository(in indexPath: IndexPath) -> RepositoryElement? {
+        return repoList?[indexPath.row]
     }
     
     func showRepoDetail() {

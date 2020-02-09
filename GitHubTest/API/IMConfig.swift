@@ -56,7 +56,11 @@ class IMConfig<T: Fetcher> {
                 return
             }
             do {
-                let decodedResponse = try JSONDecoder().decode(dataType.self, from: data)
+                let decoder = JSONDecoder()
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+                decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                let decodedResponse = try decoder.decode(dataType.self, from: data)
                 completion?(.success(decodedResponse), response)
             } catch let error {
                 print("\n\n===========Error===========")

@@ -48,6 +48,7 @@
 		1592C73523F0943D007C321C /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592C73323F0943D007C321C /* FiltersViewController.swift */; };
 		1592C73623F0943D007C321C /* FiltersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1592C73423F0943D007C321C /* FiltersViewController.xib */; };
 		1592C73823F09B24007C321C /* Encodable+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592C73723F09B24007C321C /* Encodable+Utils.swift */; };
+		1592C73A23F0AC8D007C321C /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592C73923F0AC8D007C321C /* Date+Utils.swift */; };
 		15A6D76823F0591400B0513A /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A6D76723F0591400B0513A /* HomeService.swift */; };
 		15A6D76A23F0591E00B0513A /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A6D76923F0591E00B0513A /* HomeAPI.swift */; };
 		15A6D76C23F05B1D00B0513A /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A6D76B23F05B1D00B0513A /* RepositoryModel.swift */; };
@@ -120,6 +121,7 @@
 		1592C73323F0943D007C321C /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		1592C73423F0943D007C321C /* FiltersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiltersViewController.xib; sourceTree = "<group>"; };
 		1592C73723F09B24007C321C /* Encodable+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Utils.swift"; sourceTree = "<group>"; };
+		1592C73923F0AC8D007C321C /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		15A010E823EF713B00FF8F9C /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		15A010ED23EF749500FF8F9C /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		15A010F123EF749900FF8F9C /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				1554904F23EF682F0025D97D /* String+Utils.swift */,
 				1554905323EF6E340025D97D /* UICollectionView+Utils.swift */,
 				1592C73723F09B24007C321C /* Encodable+Utils.swift */,
+				1592C73923F0AC8D007C321C /* Date+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				1554905023EF682F0025D97D /* String+Utils.swift in Sources */,
 				1580773123EF1DBC007A6711 /* UIViewController+Utils.swift in Sources */,
 				1592C73523F0943D007C321C /* FiltersViewController.swift in Sources */,
+				1592C73A23F0AC8D007C321C /* Date+Utils.swift in Sources */,
 				1580773923EF1ECB007A6711 /* HomeViewModel.swift in Sources */,
 				15A6D76C23F05B1D00B0513A /* RepositoryModel.swift in Sources */,
 				1554904823EF5D8A0025D97D /* Dictionary+Utils.swift in Sources */,

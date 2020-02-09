@@ -52,6 +52,7 @@ final class HomeViewController: BaseViewController {
         homeCollectionView.register(RepoCollectionViewCell.self)
     }
     
+    // MARK: Add a Activity Indicator in the homeCollectionView
     private func addRefreshControl() {
         refreshControl = UIRefreshControl()
         refreshControl.backgroundColor = .clear
@@ -97,12 +98,13 @@ extension HomeViewController: UICollectionViewDelegate {
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        viewModel.numberOfRepos
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return homeCollectionView.dequeueReusableCell(of: RepoCollectionViewCell.self, for: indexPath) { cell in
-            
+        return homeCollectionView.dequeueReusableCell(of: RepoCollectionViewCell.self, for: indexPath) { [weak self] cell in
+            guard let repo = self?.viewModel.getRepository(in: indexPath) else { return }
+            cell.setup(repo: repo)
         }
     }
 }
