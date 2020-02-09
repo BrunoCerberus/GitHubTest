@@ -50,9 +50,9 @@ final class HomeCoordinator: BaseCoordinator {
         self.window = window
     }
     
-    private func showRepoDetail(_ repo: Any?) {
+    private func showRepoDetail(_ repo: RepositoryElement) {
         guard let navigationController = navigation else { return }
-        detailViewController = RepoDetailViewController()
+        detailViewController = RepoDetailViewController(repo: repo)
         let destinationNavigationController = IMNavigationViewController(rootViewController: detailViewController)
         navigationController.present(destinationNavigationController, animated: true, completion: nil)
     }
@@ -69,7 +69,7 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
         showFilters()
     }
     
-    func homeViewModel(_ viewModel: HomeViewModel, show repoDetail: Any?) {
+    func homeViewModel(_ viewModel: HomeViewModel, show repoDetail: RepositoryElement) {
         showRepoDetail(repoDetail)
     }
 }

@@ -44,21 +44,13 @@ class IMConfig<T: Fetcher> {
         session.dataTask(with: request) { (dataRequest, response, error) in
             self.debugResponse(request, dataRequest, response, error)
             guard let data = dataRequest else {
-                print("\n\n===========Error===========")
-                print("Error Code: \(error?._code ?? 0)")
-                print("Error Messsage: \(error?.localizedDescription ?? "")")
-                if let data = dataRequest, let str = String(data: data, encoding: String.Encoding.utf8) {
-                    print("Server Error: " + str)
-                }
-                debugPrint(error as Any)
-                print("===========================\n\n")
                 completion?(.failure(IMError.generic), nil)
                 return
             }
             do {
                 let decoder = JSONDecoder()
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+                dateFormatter.dateFormat = Date.FormatStyle.fullDateWithTimeZone.rawValue
                 decoder.dateDecodingStrategy = .formatted(dateFormatter)
                 let decodedResponse = try decoder.decode(dataType.self, from: data)
                 completion?(.success(decodedResponse), response)

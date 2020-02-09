@@ -21,6 +21,14 @@ public extension UIView {
         return result
     }
     
+    /// Apply round to desired corners
+    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
+    }
+    
     static func startSelectionFeedback() {
         let selection = UISelectionFeedbackGenerator()
         selection.selectionChanged()

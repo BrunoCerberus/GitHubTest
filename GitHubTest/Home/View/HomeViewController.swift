@@ -92,7 +92,8 @@ final class HomeViewController: BaseViewController {
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.showRepoDetail()
+        guard let selectedRepo = viewModel.getRepository(in: indexPath) else { return }
+        viewModel.showRepoDetail(with: selectedRepo)
     }
 }
 

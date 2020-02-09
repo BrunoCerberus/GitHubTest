@@ -49,6 +49,12 @@
 		1592C73623F0943D007C321C /* FiltersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1592C73423F0943D007C321C /* FiltersViewController.xib */; };
 		1592C73823F09B24007C321C /* Encodable+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592C73723F09B24007C321C /* Encodable+Utils.swift */; };
 		1592C73A23F0AC8D007C321C /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592C73923F0AC8D007C321C /* Date+Utils.swift */; };
+		1592C73D23F0C360007C321C /* MainRepoInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592C73B23F0C360007C321C /* MainRepoInfoTableViewCell.swift */; };
+		1592C73E23F0C360007C321C /* MainRepoInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1592C73C23F0C360007C321C /* MainRepoInfoTableViewCell.xib */; };
+		1592C74123F0C3BE007C321C /* SecondaryInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592C73F23F0C3BE007C321C /* SecondaryInfoTableViewCell.swift */; };
+		1592C74223F0C3BE007C321C /* SecondaryInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1592C74023F0C3BE007C321C /* SecondaryInfoTableViewCell.xib */; };
+		1592C74523F0C405007C321C /* ReadMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592C74323F0C405007C321C /* ReadMeTableViewCell.swift */; };
+		1592C74623F0C405007C321C /* ReadMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1592C74423F0C405007C321C /* ReadMeTableViewCell.xib */; };
 		15A6D76823F0591400B0513A /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A6D76723F0591400B0513A /* HomeService.swift */; };
 		15A6D76A23F0591E00B0513A /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A6D76923F0591E00B0513A /* HomeAPI.swift */; };
 		15A6D76C23F05B1D00B0513A /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A6D76B23F05B1D00B0513A /* RepositoryModel.swift */; };
@@ -122,6 +128,12 @@
 		1592C73423F0943D007C321C /* FiltersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiltersViewController.xib; sourceTree = "<group>"; };
 		1592C73723F09B24007C321C /* Encodable+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Utils.swift"; sourceTree = "<group>"; };
 		1592C73923F0AC8D007C321C /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
+		1592C73B23F0C360007C321C /* MainRepoInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRepoInfoTableViewCell.swift; sourceTree = "<group>"; };
+		1592C73C23F0C360007C321C /* MainRepoInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainRepoInfoTableViewCell.xib; sourceTree = "<group>"; };
+		1592C73F23F0C3BE007C321C /* SecondaryInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryInfoTableViewCell.swift; sourceTree = "<group>"; };
+		1592C74023F0C3BE007C321C /* SecondaryInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondaryInfoTableViewCell.xib; sourceTree = "<group>"; };
+		1592C74323F0C405007C321C /* ReadMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMeTableViewCell.swift; sourceTree = "<group>"; };
+		1592C74423F0C405007C321C /* ReadMeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReadMeTableViewCell.xib; sourceTree = "<group>"; };
 		15A010E823EF713B00FF8F9C /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		15A010ED23EF749500FF8F9C /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		15A010F123EF749900FF8F9C /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -309,6 +321,12 @@
 			children = (
 				1592C72D23F07CF1007C321C /* RepoCollectionViewCell.swift */,
 				1592C72E23F07CF1007C321C /* RepoCollectionViewCell.xib */,
+				1592C73B23F0C360007C321C /* MainRepoInfoTableViewCell.swift */,
+				1592C73C23F0C360007C321C /* MainRepoInfoTableViewCell.xib */,
+				1592C73F23F0C3BE007C321C /* SecondaryInfoTableViewCell.swift */,
+				1592C74023F0C3BE007C321C /* SecondaryInfoTableViewCell.xib */,
+				1592C74323F0C405007C321C /* ReadMeTableViewCell.swift */,
+				1592C74423F0C405007C321C /* ReadMeTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -409,11 +427,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1580770123EF12F2007A6711 /* LaunchScreen.storyboard in Resources */,
+				1592C73E23F0C360007C321C /* MainRepoInfoTableViewCell.xib in Resources */,
 				1580773D23EF24A0007A6711 /* RepoDetailViewController.xib in Resources */,
 				158076FE23EF12F2007A6711 /* Assets.xcassets in Resources */,
 				1592C73023F07CF1007C321C /* RepoCollectionViewCell.xib in Resources */,
 				1592C73623F0943D007C321C /* FiltersViewController.xib in Resources */,
+				1592C74223F0C3BE007C321C /* SecondaryInfoTableViewCell.xib in Resources */,
 				1580773523EF1E53007A6711 /* HomeViewController.xib in Resources */,
+				1592C74623F0C405007C321C /* ReadMeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,7 +517,9 @@
 				1580771F23EF15EE007A6711 /* BaseCoordinator.swift in Sources */,
 				1580774323EF55A7007A6711 /* BaseService.swift in Sources */,
 				1580773423EF1E53007A6711 /* HomeViewController.swift in Sources */,
+				1592C74523F0C405007C321C /* ReadMeTableViewCell.swift in Sources */,
 				1580772223EF166D007A6711 /* IMNavigationController.swift in Sources */,
+				1592C74123F0C3BE007C321C /* SecondaryInfoTableViewCell.swift in Sources */,
 				1592C73823F09B24007C321C /* Encodable+Utils.swift in Sources */,
 				1580773723EF1EA6007A6711 /* HomeCoordinator.swift in Sources */,
 				1554904C23EF67A20025D97D /* UIView+Utils.swift in Sources */,
@@ -505,6 +528,7 @@
 				1580773F23EF52B1007A6711 /* Fetcher.swift in Sources */,
 				1580772D23EF18DB007A6711 /* BaseViewController.swift in Sources */,
 				1554904A23EF675E0025D97D /* UITableView+Utils.swift in Sources */,
+				1592C73D23F0C360007C321C /* MainRepoInfoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

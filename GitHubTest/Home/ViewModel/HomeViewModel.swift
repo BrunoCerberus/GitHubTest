@@ -9,7 +9,7 @@
 import Foundation
 
 protocol HomeViewModelCoordinatorDelegate: AnyObject {
-    func homeViewModel(_ viewModel: HomeViewModel, show repoDetail: Any?)
+    func homeViewModel(_ viewModel: HomeViewModel, show repoDetail: RepositoryElement)
     func homeViewModelShowFilters(_ viewModel: HomeViewModel)
 }
 
@@ -38,8 +38,8 @@ class HomeViewModel {
         return repoList?[indexPath.row]
     }
     
-    func showRepoDetail() {
-        coordinatorDelegate?.homeViewModel(self, show: nil)
+    func showRepoDetail(with repo: RepositoryElement) {
+        coordinatorDelegate?.homeViewModel(self, show: repo)
     }
     
     func requesReposList() {
