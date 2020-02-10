@@ -15,7 +15,6 @@ final class RepoDetailViewController: BaseViewController {
     enum RepoDetailRow: Int {
         case mainInfo
         case secondaryInfo
-        case readMeInfo
         
         static var count: Int { return 3 }
     }
@@ -45,12 +44,28 @@ final class RepoDetailViewController: BaseViewController {
     private func registerCells() {
         detailTableView.register(MainRepoInfoTableViewCell.self)
         detailTableView.register(SecondaryInfoTableViewCell.self)
-        detailTableView.register(ReadMeTableViewCell.self)
+        detailTableView.registerHeaderFooter(ReadMeTableViewCell.self)
     }
     
     private func roundCorners() {
         detailTableView.roundCorners(corners: [.topLeft, .topRight], radius: 20)
-        detailTableView.tableFooterView = UIView()
+    }
+}
+
+extension RepoDetailViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView =  detailTableView.dequeueReusableHeaderFooterView(of: ReadMeTableViewCell.self)
+        footerView?.setup(repo: repo)
+        return footerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch RepoDetailRow(rawValue: indexPath.row) {
+        case .none:
+            return 1
+        default:
+            return UITableView.automaticDimension
+        }
     }
 }
 
@@ -76,12 +91,6 @@ extension RepoDetailViewController: UITableViewDataSource {
                                                         cell.setup(repo: self.repo)
             }
             
-        case .readMeInfo:
-            return detailTableView.dequeueReusableCell(of: ReadMeTableViewCell.self,
-                                                       for: indexPath) { [weak self] cell in
-                                                        guard let self = self else { return }
-                                                        cell.setup(repo: self.repo)
-            }
         case .none:
             return UITableViewCell()
         }
