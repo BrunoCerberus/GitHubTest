@@ -24,7 +24,7 @@
                     <color key="backgroundColor" red="0.70588235290000001" green="0.72156862749999995" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="L1l-19-uAO">
-                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <rect key="frame" x="0.0" y="73" width="414" height="823"/>
                     <color key="backgroundColor" red="0.70588235294117641" green="0.72156862745098038" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="pJI-co-hNs">
                         <size key="itemSize" width="122" height="124"/>
@@ -37,19 +37,29 @@
                         <outlet property="delegate" destination="-1" id="5Xv-qx-aHD"/>
                     </connections>
                 </collectionView>
+                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCG-bI-ame">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="mux-3z-fVM"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.70588235294117641" green="0.72156862745098038" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="L1l-19-uAO" firstAttribute="top" secondItem="iYo-C5-S6g" secondAttribute="top" id="0wD-Si-uU9"/>
+                <constraint firstItem="dCG-bI-ame" firstAttribute="trailing" secondItem="s00-Vk-hJE" secondAttribute="trailing" id="55q-TD-fX4"/>
                 <constraint firstItem="gxO-hM-3e8" firstAttribute="bottom" secondItem="s00-Vk-hJE" secondAttribute="top" constant="20" id="DOQ-JV-VgN"/>
-                <constraint firstItem="L1l-19-uAO" firstAttribute="leading" secondItem="iYo-C5-S6g" secondAttribute="leading" id="SIh-FM-h0b"/>
-                <constraint firstItem="iYo-C5-S6g" firstAttribute="trailing" secondItem="L1l-19-uAO" secondAttribute="trailing" id="TX7-Qr-lrd"/>
-                <constraint firstItem="iYo-C5-S6g" firstAttribute="trailing" secondItem="gxO-hM-3e8" secondAttribute="trailing" id="Yjf-tt-EXP"/>
-                <constraint firstItem="gxO-hM-3e8" firstAttribute="leading" secondItem="iYo-C5-S6g" secondAttribute="leading" id="dnL-tD-u65"/>
+                <constraint firstItem="L1l-19-uAO" firstAttribute="leading" secondItem="s00-Vk-hJE" secondAttribute="leading" id="SIh-FM-h0b"/>
+                <constraint firstAttribute="trailing" secondItem="L1l-19-uAO" secondAttribute="trailing" id="TX7-Qr-lrd"/>
+                <constraint firstAttribute="trailing" secondItem="gxO-hM-3e8" secondAttribute="trailing" id="Yjf-tt-EXP"/>
+                <constraint firstItem="gxO-hM-3e8" firstAttribute="leading" secondItem="s00-Vk-hJE" secondAttribute="leading" id="dnL-tD-u65"/>
+                <constraint firstItem="dCG-bI-ame" firstAttribute="leading" secondItem="s00-Vk-hJE" secondAttribute="leading" id="po1-ea-j6B"/>
+                <constraint firstItem="L1l-19-uAO" firstAttribute="top" secondItem="dCG-bI-ame" secondAttribute="bottom" constant="8" symbolic="YES" id="tfJ-do-pOA"/>
                 <constraint firstAttribute="bottom" secondItem="L1l-19-uAO" secondAttribute="bottom" id="vY3-Z9-bHy"/>
                 <constraint firstItem="gxO-hM-3e8" firstAttribute="height" secondItem="s00-Vk-hJE" secondAttribute="height" multiplier="1.5" id="y2Q-3q-n9o"/>
+                <constraint firstItem="dCG-bI-ame" firstAttribute="top" secondItem="s00-Vk-hJE" secondAttribute="top" id="z9b-pC-7jP"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="iYo-C5-S6g"/>
+            <viewLayoutGuide key="safeArea" id="fKZ-OQ-75u"/>
             <point key="canvasLocation" x="-2274.4000000000001" y="169.56521739130437"/>
         </view>
     </objects>

@@ -17,6 +17,13 @@ final class HomeViewController: BaseViewController {
     private var refreshControl: UIRefreshControl!
     private var dispatchGroup: DispatchGroup!
     
+    enum HomeSection: Int {
+        case filter
+        case repos
+        
+        static var count: Int { return 2 }
+    }
+    
     init(viewModel: HomeViewModel) {
         super.init(nibName: nil, bundle: nil)
         dispatchGroup = DispatchGroup()
@@ -29,12 +36,6 @@ final class HomeViewController: BaseViewController {
         viewModel.viewDelegate = self
         title = "GitHub"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ICO_FILTER"),
-                                                            landscapeImagePhone: nil,
-                                                            style: .done,
-                                                            target: self,
-                                                            action: #selector(showFilters))
-        
         setup()
     }
     
@@ -43,12 +44,36 @@ final class HomeViewController: BaseViewController {
     }
     
     private func setup() {
+        registerBarButtonItems()
         registerCells()
         addRefreshControl()
         refreshHome()
     }
     
+    private func registerBarButtonItems() {
+        let filterButton = UIBarButtonItem(image: UIImage(named: "ICO_FILTER"),
+                                           landscapeImagePhone: nil,
+                                           style: .done,
+                                           target: self,
+                                           action: #selector(showFilters))
+        
+        let searchButton = UIBarButtonItem(image: UIImage(named: "ICO_SEARCH"),
+                                           landscapeImagePhone: nil,
+                                           style: .done,
+                                           target: self,
+                                           action: #selector(showFilters))
+        
+        filterButton.tintColor = .imBarButtonItems
+        searchButton.tintColor = .imBarButtonItems
+        
+        navigationItem.rightBarButtonItems = [
+            filterButton,
+            searchButton
+        ]
+    }
+    
     private func registerCells() {
+        homeCollectionView.register(DefaultCollectionViewCell.self)
         homeCollectionView.register(RepoCollectionViewCell.self)
     }
     
@@ -98,14 +123,33 @@ extension HomeViewController: UICollectionViewDelegate {
 }
 
 extension HomeViewController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return HomeSection.count
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.numberOfRepos
+        switch HomeSection(rawValue: section) {
+        case .filter:
+            return 1
+        case .repos:
+            return viewModel.numberOfRepos
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return homeCollectionView.dequeueReusableCell(of: RepoCollectionViewCell.self, for: indexPath) { [weak self] cell in
-            guard let repo = self?.viewModel.getRepository(in: indexPath) else { return }
-            cell.setup(repo: repo)
+        switch HomeSection(rawValue: indexPath.section) {
+        case .filter:
+            return homeCollectionView.dequeueReusableCell(of: DefaultCollectionViewCell.self, for: indexPath)
+        case .repos:
+            return homeCollectionView.dequeueReusableCell(of: RepoCollectionViewCell.self, for: indexPath) { [weak self] cell in
+                guard let repo = self?.viewModel.getRepository(in: indexPath) else { return }
+                cell.setup(repo: repo)
+            }
+            
+        default: return homeCollectionView.dequeueReusableCell(of: DefaultCollectionViewCell.self, for: indexPath)
         }
     }
 }
@@ -116,21 +160,41 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: collectionView.frame.width - 16, height: 155)
+        switch HomeSection(rawValue: indexPath.section) {
+        case .filter:
+            return CGSize(width: collectionView.frame.width - 16, height: 1)
+        case .repos:
+            return CGSize(width: collectionView.frame.width - 16, height: 155)
+        default:
+            return .zero
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        return UIEdgeInsets(top: 16, left: 8, bottom: 0, right: 8)
+        switch HomeSection(rawValue: section) {
+        case .filter:
+            return .zero
+        case .repos:
+            return UIEdgeInsets(top: 16, left: 8, bottom: 0, right: 8)
+        default:
+            return .zero
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-       return 10
+        switch HomeSection(rawValue: section) {
+        case .filter:
+            return .zero
+        case .repos:
+            return 10
+        default:
+            return .zero
+        }
     }
 }
 
