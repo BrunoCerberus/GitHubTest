@@ -19,6 +19,8 @@
 - [x] POP
 - [ ] RxSwift
 - [ ] High Order Function
+- [x] Custom components
+- [x]  Persistence with UserDefaults
 
 ## Features
 - [ ] Home
