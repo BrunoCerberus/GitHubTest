@@ -24,6 +24,7 @@
 		1554905023EF682F0025D97D /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554904F23EF682F0025D97D /* String+Utils.swift */; };
 		1554905223EF6D680025D97D /* ActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554905123EF6D680025D97D /* ActivityManager.swift */; };
 		1554905423EF6E340025D97D /* UICollectionView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1554905323EF6E340025D97D /* UICollectionView+Utils.swift */; };
+		1567A1F723F31A2D005A9DFF /* UIScrollView+BottomRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1567A1F623F31A2D005A9DFF /* UIScrollView+BottomRefreshControl.m */; };
 		156A6C6823F1F61C0079A6D1 /* DefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156A6C6623F1F61C0079A6D1 /* DefaultTableViewCell.swift */; };
 		156A6C6923F1F61C0079A6D1 /* DefaultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 156A6C6723F1F61C0079A6D1 /* DefaultTableViewCell.xib */; };
 		156A6C6C23F1F6600079A6D1 /* DefaultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156A6C6A23F1F6600079A6D1 /* DefaultCollectionViewCell.swift */; };
@@ -104,6 +105,9 @@
 		1554904F23EF682F0025D97D /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		1554905123EF6D680025D97D /* ActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityManager.swift; sourceTree = "<group>"; };
 		1554905323EF6E340025D97D /* UICollectionView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Utils.swift"; sourceTree = "<group>"; };
+		1567A1F623F31A2D005A9DFF /* UIScrollView+BottomRefreshControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+BottomRefreshControl.m"; sourceTree = "<group>"; };
+		1567A1F823F31F20005A9DFF /* UIScrollView+BottomRefreshControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+BottomRefreshControl.h"; sourceTree = "<group>"; };
+		1567A1F923F31FC1005A9DFF /* GitHubTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GitHubTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		156A6C6623F1F61C0079A6D1 /* DefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTableViewCell.swift; sourceTree = "<group>"; };
 		156A6C6723F1F61C0079A6D1 /* DefaultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultTableViewCell.xib; sourceTree = "<group>"; };
 		156A6C6A23F1F6600079A6D1 /* DefaultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 				1580771D23EF15D6007A6711 /* Coordinator */,
 				1580772323EF16E8007A6711 /* Utils */,
 				1580772023EF162E007A6711 /* Common */,
+				1567A1F923F31FC1005A9DFF /* GitHubTest-Bridging-Header.h */,
 			);
 			path = GitHubTest;
 			sourceTree = "<group>";
@@ -335,6 +340,8 @@
 				1554905323EF6E340025D97D /* UICollectionView+Utils.swift */,
 				1592C73723F09B24007C321C /* Encodable+Utils.swift */,
 				1592C73923F0AC8D007C321C /* Date+Utils.swift */,
+				1567A1F623F31A2D005A9DFF /* UIScrollView+BottomRefreshControl.m */,
+				1567A1F823F31F20005A9DFF /* UIScrollView+BottomRefreshControl.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -546,6 +553,7 @@
 				1580773423EF1E53007A6711 /* HomeViewController.swift in Sources */,
 				1592C74523F0C405007C321C /* ReadMeTableViewCell.swift in Sources */,
 				1580772223EF166D007A6711 /* IMNavigationController.swift in Sources */,
+				1567A1F723F31A2D005A9DFF /* UIScrollView+BottomRefreshControl.m in Sources */,
 				156A6C6823F1F61C0079A6D1 /* DefaultTableViewCell.swift in Sources */,
 				1592C74123F0C3BE007C321C /* SecondaryInfoTableViewCell.swift in Sources */,
 				1592C73823F09B24007C321C /* Encodable+Utils.swift in Sources */,
@@ -722,6 +730,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = bruno.GitHubTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GitHubTest/GitHubTest-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -745,6 +754,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = bruno.GitHubTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GitHubTest/GitHubTest-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

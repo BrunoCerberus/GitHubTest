@@ -11,10 +11,10 @@ import UIKit
 final class HomeViewController: BaseViewController {
     
     @IBOutlet weak var homeCollectionView: UICollectionView!
-    @IBOutlet weak var backgroundTop: UIView!
     
     private var viewModel: HomeViewModel!
     private var refreshControl: UIRefreshControl!
+    private var bottomRefreshControl: UIRefreshControl!
     private var dispatchGroup: DispatchGroup!
     
     enum HomeSection: Int {
@@ -80,18 +80,13 @@ final class HomeViewController: BaseViewController {
     // MARK: Add a Activity Indicator in the homeCollectionView
     private func addRefreshControl() {
         refreshControl = UIRefreshControl()
-        refreshControl.backgroundColor = .clear
-        refreshControl.tintColor       = .clear
+        bottomRefreshControl = UIRefreshControl()
+        refreshControl.tintColor = UIColor.red
+        bottomRefreshControl.tintColor = UIColor.blue
         refreshControl.addTarget(self, action: #selector(refreshHome), for: .valueChanged)
-        self.homeCollectionView.insertSubview(refreshControl, at: 0)
-        
-        let screen = UIScreen.main.bounds
-        let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: screen.width / 2,
-                                                                      y: 44, width: 0, height: 0))
-        activityIndicator.style = .large
-        activityIndicator.color = .imActivityIndicatorPullToRefresh
-        activityIndicator.startAnimating()
-        refreshControl.subviews[0].addSubview(activityIndicator)
+        bottomRefreshControl.addTarget(self, action: #selector(fetchMoreRepos), for: .valueChanged)
+        homeCollectionView!.refreshControl = refreshControl
+        homeCollectionView.bottomRefreshControl = bottomRefreshControl
     }
     
     private func requests() {
@@ -108,6 +103,11 @@ final class HomeViewController: BaseViewController {
                 self.homeCollectionView.reloadData()
             }
         }
+    }
+    
+    @objc func fetchMoreRepos() {
+        bottomRefreshControl.endRefreshing()
+        homeCollectionView.reloadData()
     }
     
     @objc private func showFilters() {
@@ -198,17 +198,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
             return 10
         default:
             return .zero
-        }
-    }
-}
-
-extension HomeViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = -scrollView.contentOffset.y
-        if offset >= 0 {
-            backgroundTop.transform = .init(translationX: 0, y: offset)
-        } else {
-            backgroundTop.transform = .init(translationX: 0, y: 0)
         }
     }
 }

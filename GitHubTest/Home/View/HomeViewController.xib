@@ -9,7 +9,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="GitHubTest" customModuleProvider="target">
             <connections>
-                <outlet property="backgroundTop" destination="gxO-hM-3e8" id="Kvk-MV-CAE"/>
                 <outlet property="homeCollectionView" destination="L1l-19-uAO" id="vzc-De-ZZH"/>
                 <outlet property="view" destination="s00-Vk-hJE" id="8IX-2M-L5n"/>
             </connections>
@@ -19,10 +18,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gxO-hM-3e8" userLabel="greenTopBg">
-                    <rect key="frame" x="0.0" y="-1324" width="414" height="1344"/>
-                    <color key="backgroundColor" red="0.70588235290000001" green="0.72156862749999995" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="L1l-19-uAO">
                     <rect key="frame" x="0.0" y="73" width="414" height="823"/>
                     <color key="backgroundColor" red="0.70588235294117641" green="0.72156862745098038" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,15 +43,11 @@
             <color key="backgroundColor" red="0.70588235294117641" green="0.72156862745098038" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="dCG-bI-ame" firstAttribute="trailing" secondItem="s00-Vk-hJE" secondAttribute="trailing" id="55q-TD-fX4"/>
-                <constraint firstItem="gxO-hM-3e8" firstAttribute="bottom" secondItem="s00-Vk-hJE" secondAttribute="top" constant="20" id="DOQ-JV-VgN"/>
                 <constraint firstItem="L1l-19-uAO" firstAttribute="leading" secondItem="s00-Vk-hJE" secondAttribute="leading" id="SIh-FM-h0b"/>
                 <constraint firstAttribute="trailing" secondItem="L1l-19-uAO" secondAttribute="trailing" id="TX7-Qr-lrd"/>
-                <constraint firstAttribute="trailing" secondItem="gxO-hM-3e8" secondAttribute="trailing" id="Yjf-tt-EXP"/>
-                <constraint firstItem="gxO-hM-3e8" firstAttribute="leading" secondItem="s00-Vk-hJE" secondAttribute="leading" id="dnL-tD-u65"/>
                 <constraint firstItem="dCG-bI-ame" firstAttribute="leading" secondItem="s00-Vk-hJE" secondAttribute="leading" id="po1-ea-j6B"/>
                 <constraint firstItem="L1l-19-uAO" firstAttribute="top" secondItem="dCG-bI-ame" secondAttribute="bottom" constant="8" symbolic="YES" id="tfJ-do-pOA"/>
                 <constraint firstAttribute="bottom" secondItem="L1l-19-uAO" secondAttribute="bottom" id="vY3-Z9-bHy"/>
-                <constraint firstItem="gxO-hM-3e8" firstAttribute="height" secondItem="s00-Vk-hJE" secondAttribute="height" multiplier="1.5" id="y2Q-3q-n9o"/>
                 <constraint firstItem="dCG-bI-ame" firstAttribute="top" secondItem="s00-Vk-hJE" secondAttribute="top" id="z9b-pC-7jP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fKZ-OQ-75u"/>
