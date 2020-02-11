@@ -28,10 +28,6 @@ final class FiltersViewController: UIViewController {
         addButtonItem()
     }
     
-    private func setupButtons() {
-        
-    }
-    
     private func addButtonItem() {
         let clearButton = UIBarButtonItem(title: "Limpar",
                                           style: .plain,

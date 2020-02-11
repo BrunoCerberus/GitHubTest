@@ -49,6 +49,9 @@
                             <state key="normal" title="ESTRELAS">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="ESTRELAS"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="selectButton:" destination="-1" eventType="touchUpInside" id="s1w-Z2-I3i"/>
                             </connections>
@@ -64,6 +67,9 @@
                             <state key="normal" title="SEGUIDORES">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="SEGUIDORES"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="selectButton:" destination="-1" eventType="touchUpInside" id="vM9-Lh-sUz"/>
                             </connections>
@@ -79,6 +85,9 @@
                             <state key="normal" title="DATA">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="DATA"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="selectButton:" destination="-1" eventType="touchUpInside" id="7ON-yk-vO9"/>
                             </connections>
@@ -114,6 +123,9 @@
                             <state key="normal" title="CRESCENTE">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="CRESCENTE"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="selectButton:" destination="-1" eventType="touchUpInside" id="RTa-dN-lXL"/>
                             </connections>
@@ -129,6 +141,9 @@
                             <state key="normal" title="DECRESCENTE">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="DECRESCENTE"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="selectButton:" destination="-1" eventType="touchUpInside" id="rKb-xb-Klh"/>
                             </connections>

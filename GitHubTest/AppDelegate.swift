@@ -22,4 +22,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appCoordinator.start()
         return true
     }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        resetDefaults()
+    }
+    
+   private func resetDefaults() {
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+        }
+    }
 }
