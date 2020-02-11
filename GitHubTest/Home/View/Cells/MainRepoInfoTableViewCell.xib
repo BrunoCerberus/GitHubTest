@@ -20,7 +20,6 @@
                         <rect key="frame" x="24" y="71" width="36" height="32"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="36" id="kuR-W8-dXE"/>
-                            <constraint firstAttribute="height" constant="32" id="n07-oZ-Kfe"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REPOSITÓRIO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3B-ro-Uee">
