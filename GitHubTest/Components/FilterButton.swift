@@ -64,7 +64,7 @@ final class FilterButton: UIButton {
     
     func removeImage() {
         setImage(nil, for: .normal)
-        backgroundColor = .white
+        backgroundColor = .clear
         setTitleColor(.black, for: .normal)
         selectedState = .unselected
         guard let title = titleText else { return }
