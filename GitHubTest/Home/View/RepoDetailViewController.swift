@@ -50,6 +50,13 @@ final class RepoDetailViewController: BaseViewController {
     private func roundCorners() {
         detailTableView.roundCorners(corners: [.topLeft, .topRight], radius: 20)
     }
+    
+    @IBAction func share(_ sender: Any) {
+        let vc = UIActivityViewController(activityItems: [repo.htmlURL!], applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true, completion: nil)
+    }
+    
 }
 
 extension RepoDetailViewController: UITableViewDelegate {
