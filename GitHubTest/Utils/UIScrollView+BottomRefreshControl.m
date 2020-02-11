@@ -198,7 +198,7 @@ const CGFloat kMinRefershTime = 0.5;
         self.brc_context.refreshed = NO;
 }
 
-- (void)brc_checkRefreshingTimeAndPerformBlock:(void (^)())block {
+- (void)brc_checkRefreshingTimeAndPerformBlock:(void (^)(void))block {
 
     NSDate *date = self.brc_context.beginRefreshingDate;
     
@@ -253,6 +253,8 @@ const CGFloat kMinRefershTime = 0.5;
     UIEdgeInsets contentInset = self.contentInset;
     self.brc_context.adjustBottomInset = adjust;
     
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wdeprecated-declarations"
     if (animated)
         [UIView beginAnimations:0 context:0];
 
@@ -260,6 +262,7 @@ const CGFloat kMinRefershTime = 0.5;
     
     if (animated)
         [UIView commitAnimations];
+    #pragma clang diagnostic pop
 }
 
 - (BOOL)brc_adjustBottomInset {
