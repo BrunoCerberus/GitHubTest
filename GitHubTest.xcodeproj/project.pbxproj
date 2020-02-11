@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		150E0F3A23F2548100DE721A /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150E0F3923F2548100DE721A /* FilterButton.swift */; };
 		1530268A23EF761D00B4F2D0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A010ED23EF749500FF8F9C /* RxSwift.framework */; };
 		1530268B23EF761D00B4F2D0 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15A010ED23EF749500FF8F9C /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1530268D23EF762500B4F2D0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A010F123EF749900FF8F9C /* RxCocoa.framework */; };
@@ -91,6 +92,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		150E0F3923F2548100DE721A /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		1530269023EF7B1900B4F2D0 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		1554903F23EF59560025D97D /* IMConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMConfig.swift; sourceTree = "<group>"; };
 		1554904323EF5BAD0025D97D /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -171,6 +173,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		150E0F3823F2547100DE721A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				150E0F3923F2548100DE721A /* FilterButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		158076E823EF12F0007A6711 = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +208,7 @@
 				158076FD23EF12F2007A6711 /* Assets.xcassets */,
 				158076FF23EF12F2007A6711 /* LaunchScreen.storyboard */,
 				1580770223EF12F2007A6711 /* Info.plist */,
+				150E0F3823F2547100DE721A /* Components */,
 				1580771C23EF1450007A6711 /* API */,
 				1580771D23EF15D6007A6711 /* Coordinator */,
 				1580772323EF16E8007A6711 /* Utils */,
@@ -515,6 +526,7 @@
 				1592C73523F0943D007C321C /* FiltersViewController.swift in Sources */,
 				1592C73A23F0AC8D007C321C /* Date+Utils.swift in Sources */,
 				1580773923EF1ECB007A6711 /* HomeViewModel.swift in Sources */,
+				150E0F3A23F2548100DE721A /* FilterButton.swift in Sources */,
 				15A6D76C23F05B1D00B0513A /* RepositoryModel.swift in Sources */,
 				1554904823EF5D8A0025D97D /* Dictionary+Utils.swift in Sources */,
 				1580772523EF16FC007A6711 /* UIBarButtonItem+Utils.swift in Sources */,

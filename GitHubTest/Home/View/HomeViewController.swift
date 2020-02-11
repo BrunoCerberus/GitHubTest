@@ -61,7 +61,7 @@ final class HomeViewController: BaseViewController {
                                            landscapeImagePhone: nil,
                                            style: .done,
                                            target: self,
-                                           action: #selector(showFilters))
+                                           action: #selector(bringTextField))
         
         filterButton.tintColor = .imBarButtonItems
         searchButton.tintColor = .imBarButtonItems
@@ -112,6 +112,10 @@ final class HomeViewController: BaseViewController {
     
     @objc private func showFilters() {
         viewModel.showFilters()
+    }
+    
+    @objc private func bringTextField() {
+           
     }
 }
 
