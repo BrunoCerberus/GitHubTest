@@ -52,7 +52,11 @@ final class RepoDetailViewController: BaseViewController {
     }
     
     @IBAction func share(_ sender: Any) {
-        let vc = UIActivityViewController(activityItems: [repo.htmlURL!], applicationActivities: [])
+        guard let repoUrl = repo.htmlURL else {
+            displayGenericError()
+            return
+        }
+        let vc = UIActivityViewController(activityItems: [repoUrl], applicationActivities: [])
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(vc, animated: true, completion: nil)
     }

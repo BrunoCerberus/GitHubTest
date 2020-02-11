@@ -29,11 +29,11 @@ class BaseViewController: UIViewController {
         return .default
     }
     
-    private func displayGenericError() {
+    func displayGenericError() {
         DispatchQueue.main.async {
-            AlertManager(with: .block,
+            AlertManager(with: self,
                          title: "Erro",
-                         message: "Ocorreu um erro inesperado. Tente novamente mais tarde.").show()
+                         msg: "Ocorreu um erro inesperado. Tente novamente mais tarde.").showAlert()
         }
     }
     
@@ -50,12 +50,5 @@ class BaseViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.isTranslucent = false
         setupDismissLeftBarButtonItem()
-    }
-    
-    func showErrorMessageToast(message: String) {
-        let alert = AlertManager(with: .block,
-                                 title: "Erro",
-                                 message: message)
-        alert.show()
     }
 }
