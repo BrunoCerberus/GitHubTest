@@ -13,7 +13,7 @@
 - [x] Coordinator
 - [ ] Unit Tests
 - [x] Network layer
-- [ ] GitHub Developer V3 API
+- [x ] GitHub Developer V3 API
 - [x] Dependencies Manager (Carthage)
 - [x] Code Analyser (Swiftlint)
 - [x] POP
@@ -21,6 +21,8 @@
 - [ ] High Order Function
 - [x] Custom components
 - [x]  Persistence with UserDefaults
+- [x]  infinite Scrolling
+- [x]  Pull-to-refresh
 
 ## Features
 - [ ] Home

@@ -16,7 +16,11 @@ class ActivityManager {
 
     func showLoader(view: UIView) {
         hideLoader()
-        loader = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+        if #available(iOS 13.0, *) {
+            loader = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+        } else {
+            loader = UIActivityIndicatorView(style: .gray)
+        }
         loader?.color = .imActivityIndicator
         view.addSubview(loader!)
         view.alpha = 0.5

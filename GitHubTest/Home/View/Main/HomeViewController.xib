@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,8 +19,15 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLN-eO-GOj">
+                    <rect key="frame" x="0.0" y="796" width="414" height="100"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="ZJ9-Ze-np8"/>
+                    </constraints>
+                </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="L1l-19-uAO">
-                    <rect key="frame" x="0.0" y="73" width="414" height="823"/>
+                    <rect key="frame" x="0.0" y="65" width="414" height="797"/>
                     <color key="backgroundColor" red="0.70588235294117641" green="0.72156862745098038" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="pJI-co-hNs">
                         <size key="itemSize" width="122" height="124"/>
@@ -43,11 +51,14 @@
             <color key="backgroundColor" red="0.70588235294117641" green="0.72156862745098038" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="dCG-bI-ame" firstAttribute="trailing" secondItem="s00-Vk-hJE" secondAttribute="trailing" id="55q-TD-fX4"/>
+                <constraint firstItem="PLN-eO-GOj" firstAttribute="leading" secondItem="fKZ-OQ-75u" secondAttribute="leading" id="Gtj-jy-Aep"/>
+                <constraint firstItem="fKZ-OQ-75u" firstAttribute="trailing" secondItem="PLN-eO-GOj" secondAttribute="trailing" id="La7-Dl-qa3"/>
                 <constraint firstItem="L1l-19-uAO" firstAttribute="leading" secondItem="s00-Vk-hJE" secondAttribute="leading" id="SIh-FM-h0b"/>
                 <constraint firstAttribute="trailing" secondItem="L1l-19-uAO" secondAttribute="trailing" id="TX7-Qr-lrd"/>
+                <constraint firstAttribute="bottom" secondItem="PLN-eO-GOj" secondAttribute="bottom" id="cfN-BO-04v"/>
                 <constraint firstItem="dCG-bI-ame" firstAttribute="leading" secondItem="s00-Vk-hJE" secondAttribute="leading" id="po1-ea-j6B"/>
-                <constraint firstItem="L1l-19-uAO" firstAttribute="top" secondItem="dCG-bI-ame" secondAttribute="bottom" constant="8" symbolic="YES" id="tfJ-do-pOA"/>
-                <constraint firstItem="fKZ-OQ-75u" firstAttribute="bottom" secondItem="L1l-19-uAO" secondAttribute="bottom" constant="-34" id="vY3-Z9-bHy"/>
+                <constraint firstItem="L1l-19-uAO" firstAttribute="top" secondItem="dCG-bI-ame" secondAttribute="bottom" id="tfJ-do-pOA"/>
+                <constraint firstItem="fKZ-OQ-75u" firstAttribute="bottom" secondItem="L1l-19-uAO" secondAttribute="bottom" id="vY3-Z9-bHy"/>
                 <constraint firstItem="dCG-bI-ame" firstAttribute="top" secondItem="s00-Vk-hJE" secondAttribute="top" id="z9b-pC-7jP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fKZ-OQ-75u"/>
