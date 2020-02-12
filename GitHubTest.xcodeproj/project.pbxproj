@@ -54,6 +54,7 @@
 		1580773F23EF52B1007A6711 /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580773E23EF52B1007A6711 /* Fetcher.swift */; };
 		1580774123EF5576007A6711 /* IMCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580774023EF5576007A6711 /* IMCodable.swift */; };
 		1580774323EF55A7007A6711 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580774223EF55A7007A6711 /* BaseService.swift */; };
+		1585EFAC23F3B0E100EFB069 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1585EFAB23F3B0E100EFB069 /* Filter.swift */; };
 		1592C72F23F07CF1007C321C /* RepoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592C72D23F07CF1007C321C /* RepoCollectionViewCell.swift */; };
 		1592C73023F07CF1007C321C /* RepoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1592C72E23F07CF1007C321C /* RepoCollectionViewCell.xib */; };
 		1592C73523F0943D007C321C /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592C73323F0943D007C321C /* FiltersViewController.swift */; };
@@ -146,6 +147,7 @@
 		1580773E23EF52B1007A6711 /* Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
 		1580774023EF5576007A6711 /* IMCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMCodable.swift; sourceTree = "<group>"; };
 		1580774223EF55A7007A6711 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		1585EFAB23F3B0E100EFB069 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		1592C72D23F07CF1007C321C /* RepoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCollectionViewCell.swift; sourceTree = "<group>"; };
 		1592C72E23F07CF1007C321C /* RepoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoCollectionViewCell.xib; sourceTree = "<group>"; };
 		1592C73323F0943D007C321C /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				15A6D76B23F05B1D00B0513A /* RepositoryModel.swift */,
+				1585EFAB23F3B0E100EFB069 /* Filter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				1554904C23EF67A20025D97D /* UIView+Utils.swift in Sources */,
 				1554904E23EF67D90025D97D /* UIColor+Utils.swift in Sources */,
 				150F3C8423F39B12001BE5A7 /* FilterCollectionViewCell.swift in Sources */,
+				1585EFAC23F3B0E100EFB069 /* Filter.swift in Sources */,
 				1580772F23EF194B007A6711 /* AlertManager.swift in Sources */,
 				1580773F23EF52B1007A6711 /* Fetcher.swift in Sources */,
 				1580772D23EF18DB007A6711 /* BaseViewController.swift in Sources */,

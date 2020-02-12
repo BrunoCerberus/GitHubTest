@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class FiltersViewController: UIViewController {
     
@@ -15,6 +17,8 @@ final class FiltersViewController: UIViewController {
     @IBOutlet weak var dateButton: FilterButton!
     @IBOutlet weak var ascendingButton: FilterButton!
     @IBOutlet weak var descendingButton: FilterButton!
+    
+    let task = PublishSubject<Filter>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +49,7 @@ final class FiltersViewController: UIViewController {
         descendingButton.removeImage()
     }
     @IBAction func selectButton(_ sender: FilterButton) {
+        self.task.onNext(Filter(title: sender.titleLabel?.text ?? ""))
         sender.didSelect()
     }
 }

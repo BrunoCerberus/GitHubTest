@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 protocol FilterCarouselCollectionViewDelegate: AnyObject {
     func filter(with words: [String])
@@ -19,57 +20,66 @@ class FilterCarouselCollectionViewCell: UICollectionViewCell {
     
     weak var delegate: FilterCarouselCollectionViewDelegate?
     
+    var appdelegate: AppDelegate {
+        return (UIApplication.shared.delegate as? AppDelegate)!
+    }
+    
+    var tasks: Variable<[Filter]> = Variable([])
+    private let disposeBag = DisposeBag()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         carouselFilterCollectionView.delegate = self
-        carouselFilterCollectionView.dataSource = self
         carouselFilterCollectionView.register(FilterCollectionViewCell.self)
-    }
-}
-
-extension FilterCarouselCollectionViewCell: UICollectionViewDelegate {
-    
-}
-
-extension FilterCarouselCollectionViewCell: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        
+        bindAddFilter()
+        bindCollectionView()
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return carouselFilterCollectionView
-            .dequeueReusableCell(of: FilterCollectionViewCell.self,
-                                 for: indexPath) { cell in
-                                    cell.setup(filterName: "teste",
-                                               on: indexPath.row)
-                                    cell.delegate = self
-        }
+    private func bindAddFilter() {
+        appdelegate.appCoordinator.homeCoordinator?
+            .filtersViewController.task.subscribe(onNext: { [weak self] task in
+            self?.tasks.value.append(task)
+        }).disposed(by: disposeBag)
+    }
+    
+    private func bindCollectionView() {
+        
+        tasks.asObservable()
+            .bind(to: carouselFilterCollectionView
+                .rx
+                .items(cellIdentifier: "FilterCollectionViewCell",
+                       cellType: FilterCollectionViewCell.self)) { _, element, cell in
+                
+                        cell.setup(filterName: element.title)
+                
+        }.disposed(by: disposeBag)
     }
 }
 
 extension FilterCarouselCollectionViewCell: UICollectionViewDelegateFlowLayout {
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cell = carouselFilterCollectionView.dequeueReusableCell(of: FilterCollectionViewCell.self,
                                                                     for: indexPath) as? FilterCollectionViewCell
-        cell?.setup(filterName: "teste")
+        cell?.setup(filterName: tasks.value[indexPath.row].title)
         cell?.setNeedsLayout()
         cell?.layoutIfNeeded()
         let size: CGSize = (cell?.contentView
             .systemLayoutSizeFitting(UIView.layoutFittingCompressedSize))!
         return CGSize(width: size.width, height: 36)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        
+
         return UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {

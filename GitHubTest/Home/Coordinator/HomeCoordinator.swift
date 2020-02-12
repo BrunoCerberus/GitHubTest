@@ -28,8 +28,8 @@ final class HomeCoordinator: BaseCoordinator {
     }()
     
     // MARK: Controllers
-    private var detailViewController: RepoDetailViewController!
-    private var filtersViewController: FiltersViewController!
+    var detailViewController: RepoDetailViewController!
+    var filtersViewController: FiltersViewController = FiltersViewController()
     
     func start() {
         viewModel = HomeViewModel()
@@ -59,7 +59,6 @@ final class HomeCoordinator: BaseCoordinator {
     
     @objc private func showFilters() {
         guard let navigationController = navigation else { return }
-        filtersViewController = FiltersViewController()
         navigationController.pushViewController(filtersViewController, animated: true)
     }
 }
