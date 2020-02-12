@@ -50,6 +50,9 @@ class FilterCarouselCollectionViewCell: UICollectionViewCell {
                 } else {
                     self?.tasks.value.append(task)
                 }
+                if self?.tasks.value.count == 0 {
+                    self?.delegate?.performBatchUpdates(height: 1)
+                }
         }).disposed(by: disposeBag)
     }
     

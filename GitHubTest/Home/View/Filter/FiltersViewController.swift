@@ -52,6 +52,13 @@ final class FiltersViewController: UIViewController {
     }
     
     @objc private func cleanFilters() {
+        
+        if starsButton.selectedState == .selected { self.task.onNext(Filter(title: starsButton.titleLabel?.text ?? "")) }
+        if watchersButton.selectedState == .selected { self.task.onNext(Filter(title: watchersButton.titleLabel?.text ?? "")) }
+        if dateButton.selectedState == .selected { self.task.onNext(Filter(title: dateButton.titleLabel?.text ?? "")) }
+        if ascendingButton.selectedState == .selected { self.task.onNext(Filter(title: ascendingButton.titleLabel?.text ?? "")) }
+        if descendingButton.selectedState == .selected { self.task.onNext(Filter(title: descendingButton.titleLabel?.text ?? "")) }
+        
         starsButton.removeImage()
         watchersButton.removeImage()
         dateButton.removeImage()
@@ -61,9 +68,5 @@ final class FiltersViewController: UIViewController {
     @IBAction func selectButton(_ sender: FilterButton) {
         self.task.onNext(Filter(title: sender.titleLabel?.text ?? ""))
         sender.didSelect()
-    }
-    
-    @IBAction func submitFilter(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
     }
 }
