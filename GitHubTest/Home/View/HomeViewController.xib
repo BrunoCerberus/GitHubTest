@@ -47,7 +47,7 @@
                 <constraint firstAttribute="trailing" secondItem="L1l-19-uAO" secondAttribute="trailing" id="TX7-Qr-lrd"/>
                 <constraint firstItem="dCG-bI-ame" firstAttribute="leading" secondItem="s00-Vk-hJE" secondAttribute="leading" id="po1-ea-j6B"/>
                 <constraint firstItem="L1l-19-uAO" firstAttribute="top" secondItem="dCG-bI-ame" secondAttribute="bottom" constant="8" symbolic="YES" id="tfJ-do-pOA"/>
-                <constraint firstAttribute="bottom" secondItem="L1l-19-uAO" secondAttribute="bottom" id="vY3-Z9-bHy"/>
+                <constraint firstItem="fKZ-OQ-75u" firstAttribute="bottom" secondItem="L1l-19-uAO" secondAttribute="bottom" constant="-34" id="vY3-Z9-bHy"/>
                 <constraint firstItem="dCG-bI-ame" firstAttribute="top" secondItem="s00-Vk-hJE" secondAttribute="top" id="z9b-pC-7jP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fKZ-OQ-75u"/>

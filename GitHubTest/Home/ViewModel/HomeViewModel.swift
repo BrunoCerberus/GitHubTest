@@ -24,10 +24,10 @@ class HomeViewModel {
     
     var homeService: HomeService!
     
-    var repoList: [RepositoryElement]?
+    var repoList: [RepositoryElement] = []
     
     var numberOfRepos: Int {
-        return repoList?.count ?? 0
+        return repoList.count
     }
     
     init() {
@@ -35,17 +35,21 @@ class HomeViewModel {
     }
     
     func getRepository(in indexPath: IndexPath) -> RepositoryElement? {
-        return repoList?[indexPath.row]
+        return repoList[indexPath.row]
     }
     
     func showRepoDetail(with repo: RepositoryElement) {
         coordinatorDelegate?.homeViewModel(self, show: repo)
     }
     
-    func requesReposList() {
-        homeService.getRepos(with: 1, onSuccess: { [weak self] repos in
+    func requesReposList(in page: Int = 1) {
+        homeService.getRepos(with: page, onSuccess: { [weak self] repos in
             guard let self = self else { return }
-            self.repoList = repos
+            if page == 1 {
+                self.repoList = repos
+            } else {
+                self.repoList.append(contentsOf: repos)
+            }
             self.viewDelegate?.homeViewModel(self, didFetch: .success(nil))
             }, onFail: { _ in
                 self.viewDelegate?.homeViewModel(self, didFetch: .failure(IMError.generic))

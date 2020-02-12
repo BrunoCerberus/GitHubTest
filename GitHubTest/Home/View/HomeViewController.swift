@@ -16,6 +16,7 @@ final class HomeViewController: BaseViewController {
     private var refreshControl: UIRefreshControl!
     private var bottomRefreshControl: UIRefreshControl!
     private var dispatchGroup: DispatchGroup!
+    private var pageCount: Int = 1
     
     enum HomeSection: Int {
         case filter
@@ -81,11 +82,11 @@ final class HomeViewController: BaseViewController {
     private func addRefreshControl() {
         refreshControl = UIRefreshControl()
         bottomRefreshControl = UIRefreshControl()
-        refreshControl.tintColor = UIColor.red
-        bottomRefreshControl.tintColor = UIColor.blue
+        refreshControl.tintColor = .imActivityIndicatorPullToRefresh
+        bottomRefreshControl.tintColor = .imActivityIndicatorPullToRefresh
         refreshControl.addTarget(self, action: #selector(refreshHome), for: .valueChanged)
         bottomRefreshControl.addTarget(self, action: #selector(fetchMoreRepos), for: .valueChanged)
-        homeCollectionView!.refreshControl = refreshControl
+        homeCollectionView.refreshControl = refreshControl
         homeCollectionView.bottomRefreshControl = bottomRefreshControl
     }
     
@@ -98,16 +99,24 @@ final class HomeViewController: BaseViewController {
         requests()
         
         dispatchGroup.notify(queue: .main) {
-            DispatchQueue.main.async {
-                self.refreshControl.endRefreshing()
-                self.homeCollectionView.reloadData()
+            DispatchQueue.main.async { [weak self] in
+                self?.pageCount = 1
+                self?.refreshControl.endRefreshing()
+                self?.homeCollectionView.reloadData()
             }
         }
     }
     
     @objc func fetchMoreRepos() {
-        bottomRefreshControl.endRefreshing()
-        homeCollectionView.reloadData()
+        dispatchGroup.enter()
+        viewModel.requesReposList(in: pageCount+1)
+        dispatchGroup.notify(queue: .main) { [weak self] in
+            DispatchQueue.main.async { [weak self] in
+                self?.pageCount += 1
+                self?.bottomRefreshControl.endRefreshing()
+                self?.homeCollectionView.reloadData()
+            }
+        }
     }
     
     @objc private func showFilters() {
