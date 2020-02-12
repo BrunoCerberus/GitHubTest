@@ -29,12 +29,12 @@ final class FilterButton: UIButton {
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
+    func checkState() {
         guard let title = titleText else { return }
         if UserDefaults.standard.bool(forKey: "\(title)-selected") {
-            didSelect()
+            setSelectedState()
+        } else {
+            removeImage()
         }
     }
     
@@ -49,14 +49,18 @@ final class FilterButton: UIButton {
         self.layer.borderWidth = fborderWidth
     }
     
+    private func setSelectedState() {
+        setImage(selectedImage, for: .normal)
+        backgroundColor = .black
+        setTitleColor(.white, for: .normal)
+        selectedState = .selected
+        guard let title = titleText else { return }
+        UserDefaults.standard.set(true, forKey: "\(title)-selected")
+    }
+    
     func didSelect() {
         if selectedState == .unselected {
-            setImage(selectedImage, for: .normal)
-            backgroundColor = .black
-            setTitleColor(.white, for: .normal)
-            selectedState = .selected
-            guard let title = titleText else { return }
-            UserDefaults.standard.set(true, forKey: "\(title)-selected")
+            setSelectedState()
         } else {
             removeImage()
         }

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FilterCollectionViewDelegate: AnyObject {
-    func removeFilterAt(index: Int)
+    func removeFilterWith(name: String)
 }
 
 class FilterCollectionViewCell: UICollectionViewCell {
@@ -20,12 +20,11 @@ class FilterCollectionViewCell: UICollectionViewCell {
     
     var index: Int!
     
-    func setup(filterName: String, on index: Int = 0) {
+    func setup(filterName: String) {
         filterLabel.text = filterName
-        self.index = index
     }
 
     @IBAction func closeFilter(_ sender: Any) {
-        delegate?.removeFilterAt(index: index)
+        delegate?.removeFilterWith(name: filterLabel.text ?? "")
     }
 }

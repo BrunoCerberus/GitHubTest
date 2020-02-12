@@ -28,6 +28,16 @@ final class FiltersViewController: UIViewController {
         setup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        starsButton.checkState()
+        watchersButton.checkState()
+        dateButton.checkState()
+        ascendingButton.checkState()
+        descendingButton.checkState()
+    }
+    
     private func setup() {
         addButtonItem()
     }

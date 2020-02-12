@@ -54,6 +54,7 @@ class FilterCarouselCollectionViewCell: UICollectionViewCell {
                        cellType: FilterCollectionViewCell.self)) { [weak self] _, element, cell in
                 
                         cell.setup(filterName: element.title)
+                        cell.delegate = self
                         self?.delegate?.performBatchUpdates(height: 56)
                 
         }.disposed(by: disposeBag)
@@ -90,7 +91,13 @@ extension FilterCarouselCollectionViewCell: UICollectionViewDelegateFlowLayout {
 }
 
 extension FilterCarouselCollectionViewCell: FilterCollectionViewDelegate {
-    func removeFilterAt(index: Int) {
-        //remove filter at the index and update
+    func removeFilterWith(name: String) {
+        for (id, filter) in tasks.value.enumerated() where filter.title == name {
+            tasks.value.remove(at: id)
+            UserDefaults.standard.set(false, forKey: "\(name)-selected")
+        }
+        if tasks.value.count == 0 {
+            delegate?.performBatchUpdates(height: 1)
+        }
     }
 }
