@@ -62,4 +62,8 @@ final class FiltersViewController: UIViewController {
         self.task.onNext(Filter(title: sender.titleLabel?.text ?? ""))
         sender.didSelect()
     }
+    
+    @IBAction func submitFilter(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 }

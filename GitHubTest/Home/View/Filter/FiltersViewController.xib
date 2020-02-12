@@ -154,6 +154,13 @@
                         <constraint firstAttribute="height" constant="40" id="ese-kq-Aey"/>
                     </constraints>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oew-cL-Xs4">
+                    <rect key="frame" x="52" y="791" width="311" height="45"/>
+                    <state key="normal" image="BTN_FILTER"/>
+                    <connections>
+                        <action selector="submitFilter:" destination="-1" eventType="touchUpInside" id="joG-LD-q0X"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -161,6 +168,8 @@
                 <constraint firstItem="Igl-JX-Uqt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8YB-va-Tzr"/>
                 <constraint firstItem="SYk-oc-fZT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="8ry-al-7SJ"/>
                 <constraint firstItem="P7P-70-b0L" firstAttribute="top" secondItem="SYk-oc-fZT" secondAttribute="bottom" constant="39" id="BR2-q9-Bmy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="oew-cL-Xs4" secondAttribute="bottom" constant="26" id="EWl-gO-rQf"/>
+                <constraint firstItem="oew-cL-Xs4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="52" id="EwZ-Hb-OCL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P7P-70-b0L" secondAttribute="trailing" id="KYp-qy-27u"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SYk-oc-fZT" secondAttribute="trailing" constant="16" id="OPY-pD-vBi"/>
                 <constraint firstItem="o7u-Qf-5by" firstAttribute="top" secondItem="P7P-70-b0L" secondAttribute="bottom" constant="26" id="S6M-b2-MWu"/>
@@ -170,6 +179,7 @@
                 <constraint firstItem="INV-78-Qvi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="ZBh-E9-cgO"/>
                 <constraint firstItem="Igl-JX-Uqt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iwO-Z1-N2p"/>
                 <constraint firstItem="SYk-oc-fZT" firstAttribute="top" secondItem="PR5-PY-UVd" secondAttribute="bottom" constant="29" id="jGn-7t-kpV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oew-cL-Xs4" secondAttribute="trailing" constant="51" id="mRr-m6-tg2"/>
                 <constraint firstItem="INV-78-Qvi" firstAttribute="top" secondItem="o7u-Qf-5by" secondAttribute="bottom" constant="29" id="oeL-re-vyV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="INV-78-Qvi" secondAttribute="trailing" constant="67" id="vGA-ov-uAX"/>
                 <constraint firstItem="Igl-JX-Uqt" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ypf-ph-PX6"/>
@@ -179,6 +189,7 @@
         </view>
     </objects>
     <resources>
+        <image name="BTN_FILTER" width="272" height="45"/>
         <image name="ICO_LINE" width="375" height="1"/>
     </resources>
 </document>
