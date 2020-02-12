@@ -7,10 +7,17 @@
 //
 
 import UIKit
+import RxSwift
+
+protocol FilterCarouselCollectionViewDelegate: AnyObject {
+    func filter(with words: [String])
+}
 
 class FilterCarouselCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var carouselFilterCollectionView: UICollectionView!
+    
+    weak var delegate: FilterCarouselCollectionViewDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,9 +38,12 @@ extension FilterCarouselCollectionViewCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return carouselFilterCollectionView.dequeueReusableCell(of: FilterCollectionViewCell.self,
-                                                                for: indexPath) { cell in
-                                                                cell.setup(filterName: "teste")
+        return carouselFilterCollectionView
+            .dequeueReusableCell(of: FilterCollectionViewCell.self,
+                                 for: indexPath) { cell in
+                                    cell.setup(filterName: "teste",
+                                               on: indexPath.row)
+                                    cell.delegate = self
         }
     }
 }
@@ -64,5 +74,11 @@ extension FilterCarouselCollectionViewCell: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 8
+    }
+}
+
+extension FilterCarouselCollectionViewCell: FilterCollectionViewDelegate {
+    func removeFilterAt(index: Int) {
+        //remove filter at the index and update
     }
 }

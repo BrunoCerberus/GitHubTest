@@ -31,10 +31,10 @@ final class HomeViewController: BaseViewController {
         dispatchGroup = DispatchGroup()
         self.viewModel = viewModel
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         viewModel.viewDelegate = self
         title = "GitHub"
         
@@ -126,7 +126,7 @@ final class HomeViewController: BaseViewController {
     }
     
     @objc private func bringTextField() {
-           
+        
     }
 }
 
@@ -157,7 +157,9 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch HomeSection(rawValue: indexPath.section) {
         case .filter:
-            return homeCollectionView.dequeueReusableCell(of: FilterCarouselCollectionViewCell.self, for: indexPath)
+            return homeCollectionView.dequeueReusableCell(of: FilterCarouselCollectionViewCell.self, for: indexPath) { cell in
+                cell.delegate = self
+            }
         case .repos:
             return homeCollectionView.dequeueReusableCell(of: RepoCollectionViewCell.self, for: indexPath) { [weak self] cell in
                 guard let repo = self?.viewModel.getRepository(in: indexPath) else { return }
@@ -215,6 +217,12 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
 extension HomeViewController: HomeViewModelViewDelegate {
     func homeViewModel(_ viewModel: HomeViewModel, didFetch result: Result<Any?, IMError>) {
-      dispatchGroup.leave()
+        dispatchGroup.leave()
+    }
+}
+
+extension HomeViewController: FilterCarouselCollectionViewDelegate {
+    func filter(with words: [String]) {
+        //filter the data
     }
 }
