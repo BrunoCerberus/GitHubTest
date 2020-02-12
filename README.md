@@ -13,7 +13,7 @@
 - [x] Coordinator
 - [ ] Unit Tests
 - [x] Network layer
-- [x ] GitHub Developer V3 API
+- [x] GitHub Developer V3 API
 - [x] Dependencies Manager (Carthage)
 - [x] Code Analyser (Swiftlint)
 - [x] POP
