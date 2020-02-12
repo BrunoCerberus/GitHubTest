@@ -17,5 +17,7 @@ class MainRepoInfoTableViewCell: UITableViewCell {
     func setup(repo: RepositoryElement) {
         repoNameLabel.text = repo.name
         starsLabel.text = "\(repo.stargazersCount ?? 0)"
+        guard let imageURL = repo.owner?.avatarURL else { return }
+        repoImage.downloaded(from: imageURL)
     }
 }

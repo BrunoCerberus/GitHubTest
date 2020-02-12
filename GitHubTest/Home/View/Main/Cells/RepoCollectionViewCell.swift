@@ -49,5 +49,7 @@ class RepoCollectionViewCell: UICollectionViewCell {
             repoNameLabel.textColor = .black
             starsLabel.textColor = .black
         }
+        guard let imageURL = repo.owner?.avatarURL else { return }
+        repoImage.downloaded(from: imageURL)
     }
 }

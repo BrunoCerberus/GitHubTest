@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		150E0F3A23F2548100DE721A /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150E0F3923F2548100DE721A /* FilterButton.swift */; };
+		150F3C8123F3964C001BE5A7 /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150F3C8023F3964C001BE5A7 /* UIImageView+Utils.swift */; };
 		1530268A23EF761D00B4F2D0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A010ED23EF749500FF8F9C /* RxSwift.framework */; };
 		1530268B23EF761D00B4F2D0 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15A010ED23EF749500FF8F9C /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1530268D23EF762500B4F2D0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A010F123EF749900FF8F9C /* RxCocoa.framework */; };
@@ -94,6 +95,7 @@
 
 /* Begin PBXFileReference section */
 		150E0F3923F2548100DE721A /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
+		150F3C8023F3964C001BE5A7 /* UIImageView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
 		1530269023EF7B1900B4F2D0 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		1554903F23EF59560025D97D /* IMConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMConfig.swift; sourceTree = "<group>"; };
 		1554904323EF5BAD0025D97D /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				1592C73923F0AC8D007C321C /* Date+Utils.swift */,
 				1567A1F623F31A2D005A9DFF /* UIScrollView+BottomRefreshControl.m */,
 				1567A1F823F31F20005A9DFF /* UIScrollView+BottomRefreshControl.h */,
+				150F3C8023F3964C001BE5A7 /* UIImageView+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				1554905223EF6D680025D97D /* ActivityManager.swift in Sources */,
 				1554904623EF5C0D0025D97D /* IMError.swift in Sources */,
 				1554904423EF5BAD0025D97D /* Reachability.swift in Sources */,
+				150F3C8123F3964C001BE5A7 /* UIImageView+Utils.swift in Sources */,
 				15A6D76A23F0591E00B0513A /* HomeAPI.swift in Sources */,
 				1580772723EF171B007A6711 /* AppCoordinator.swift in Sources */,
 				1580773C23EF24A0007A6711 /* RepoDetailViewController.swift in Sources */,
