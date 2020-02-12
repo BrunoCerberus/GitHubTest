@@ -17,6 +17,8 @@ extension UIColor {
     public static let imTitleTextAttributes = UIColor.white
     public static let imActivityIndicatorPullToRefresh = UIColor(hex6: 0x242528)
     public static let imBarButtonItems = UIColor(hex6: 0x64FFDA)
+    public static let imUpperView = UIColor(hex6: 0x242528)
+    public static let imBottomView = UIColor(hex6: 0x000000)
 
     // MARK: - Initializer
     

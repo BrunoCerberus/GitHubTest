@@ -27,13 +27,27 @@ class RepoCollectionViewCell: UICollectionViewCell {
         followersLabel.text = ""
         issuesLabel.text = ""
         lastUpdatedLabel.text = ""
+        upperView.backgroundColor = .imUpperView
+        bottomView.backgroundColor = .imBottomView
+        repoNameLabel.textColor = .white
+        starsLabel.textColor = .white
+        followersLabel.textColor = .white
+        issuesLabel.textColor = .white
+        lastUpdatedLabel.textColor = .white
+            
     }
     
-    func setup(repo: RepositoryElement) {
+    func setup(repo: RepositoryElement, index: Int) {
         repoNameLabel.text = repo.name
         starsLabel.text = "\(repo.stargazersCount ?? 0)"
         followersLabel.text = "\(repo.watchersCount ?? 0)"
         issuesLabel.text = "\(repo.openIssuesCount ?? 0)"
-        lastUpdatedLabel.text = "\(Date().days(sinceDate: repo.updatedAt ?? Date()) ?? 0)"
+        lastUpdatedLabel.text = "\(Date().days(sinceDate: repo.updatedAt ?? Date()) ?? 0) dias"
+        if index % 2 != 0 && index != 0 {
+            upperView.backgroundColor = .white
+            bottomView.backgroundColor = .darkGray
+            repoNameLabel.textColor = .black
+            starsLabel.textColor = .black
+        }
     }
 }

@@ -159,7 +159,7 @@ extension HomeViewController: UICollectionViewDataSource {
         case .repos:
             return homeCollectionView.dequeueReusableCell(of: RepoCollectionViewCell.self, for: indexPath) { [weak self] cell in
                 guard let repo = self?.viewModel.getRepository(in: indexPath) else { return }
-                cell.setup(repo: repo)
+                cell.setup(repo: repo, index: indexPath.row)
             }
             
         default: return homeCollectionView.dequeueReusableCell(of: DefaultCollectionViewCell.self, for: indexPath)
