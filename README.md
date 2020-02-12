@@ -3,6 +3,7 @@
 ## Requirements for running this project
 - Xcode 11.3.1
 - SwiftLint
+- iOS 11+
  
 ## Development Roadmap
 
