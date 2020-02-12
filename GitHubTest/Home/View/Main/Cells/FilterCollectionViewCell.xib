@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="FilterCollectionViewCell" id="gTV-IL-0wX" customClass="FilterCollectionViewCell" customModule="GitHubTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="36"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="120" height="36"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEGUIDORES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJB-7a-bpQ">
+                        <rect key="frame" x="14" y="9" width="66" height="12"/>
+                        <fontDescription key="fontDescription" name="Arial-BoldItalicMT" family="Arial" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eh5-qA-cBS">
+                        <rect key="frame" x="90" y="7" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="B0j-bp-BvB"/>
+                            <constraint firstAttribute="width" constant="20" id="q9C-GA-QuV"/>
+                        </constraints>
+                        <state key="normal" image="BTN_CLOSE_BLACK"/>
+                        <connections>
+                            <action selector="closeFilter:" destination="gTV-IL-0wX" eventType="touchUpInside" id="YkB-oG-BvX"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Eh5-qA-cBS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NJB-7a-bpQ" secondAttribute="trailing" constant="10" id="1th-2P-IaW"/>
+                <constraint firstItem="NJB-7a-bpQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="14" id="KUt-K7-0ex"/>
+                <constraint firstItem="NJB-7a-bpQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="9" id="LhS-X0-BjQ"/>
+                <constraint firstItem="Eh5-qA-cBS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7" id="Sdr-Mc-sls"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Eh5-qA-cBS" secondAttribute="trailing" constant="10" id="URH-PV-SCJ"/>
+            </constraints>
+            <size key="customSize" width="179" height="71"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                    <real key="value" value="1"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="filterLabel" destination="NJB-7a-bpQ" id="HYV-xC-ETV"/>
+            </connections>
+            <point key="canvasLocation" x="57" y="134"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="BTN_CLOSE_BLACK" width="20" height="20"/>
+    </resources>
+</document>

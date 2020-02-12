@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		150E0F3A23F2548100DE721A /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150E0F3923F2548100DE721A /* FilterButton.swift */; };
 		150F3C8123F3964C001BE5A7 /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150F3C8023F3964C001BE5A7 /* UIImageView+Utils.swift */; };
+		150F3C8423F39B12001BE5A7 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150F3C8223F39B12001BE5A7 /* FilterCollectionViewCell.swift */; };
+		150F3C8523F39B13001BE5A7 /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 150F3C8323F39B12001BE5A7 /* FilterCollectionViewCell.xib */; };
+		150F3C8823F3A4BA001BE5A7 /* FilterCarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150F3C8623F3A4BA001BE5A7 /* FilterCarouselCollectionViewCell.swift */; };
+		150F3C8923F3A4BA001BE5A7 /* FilterCarouselCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 150F3C8723F3A4BA001BE5A7 /* FilterCarouselCollectionViewCell.xib */; };
 		1530268A23EF761D00B4F2D0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A010ED23EF749500FF8F9C /* RxSwift.framework */; };
 		1530268B23EF761D00B4F2D0 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15A010ED23EF749500FF8F9C /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1530268D23EF762500B4F2D0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A010F123EF749900FF8F9C /* RxCocoa.framework */; };
@@ -96,6 +100,10 @@
 /* Begin PBXFileReference section */
 		150E0F3923F2548100DE721A /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		150F3C8023F3964C001BE5A7 /* UIImageView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
+		150F3C8223F39B12001BE5A7 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		150F3C8323F39B12001BE5A7 /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
+		150F3C8623F3A4BA001BE5A7 /* FilterCarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCarouselCollectionViewCell.swift; sourceTree = "<group>"; };
+		150F3C8723F3A4BA001BE5A7 /* FilterCarouselCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCarouselCollectionViewCell.xib; sourceTree = "<group>"; };
 		1530269023EF7B1900B4F2D0 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		1554903F23EF59560025D97D /* IMConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMConfig.swift; sourceTree = "<group>"; };
 		1554904323EF5BAD0025D97D /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -242,6 +250,10 @@
 			children = (
 				1592C72D23F07CF1007C321C /* RepoCollectionViewCell.swift */,
 				1592C72E23F07CF1007C321C /* RepoCollectionViewCell.xib */,
+				150F3C8223F39B12001BE5A7 /* FilterCollectionViewCell.swift */,
+				150F3C8323F39B12001BE5A7 /* FilterCollectionViewCell.xib */,
+				150F3C8623F3A4BA001BE5A7 /* FilterCarouselCollectionViewCell.swift */,
+				150F3C8723F3A4BA001BE5A7 /* FilterCarouselCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -506,9 +518,11 @@
 				158076FE23EF12F2007A6711 /* Assets.xcassets in Resources */,
 				1592C73023F07CF1007C321C /* RepoCollectionViewCell.xib in Resources */,
 				1592C73623F0943D007C321C /* FiltersViewController.xib in Resources */,
+				150F3C8923F3A4BA001BE5A7 /* FilterCarouselCollectionViewCell.xib in Resources */,
 				1592C74223F0C3BE007C321C /* SecondaryInfoTableViewCell.xib in Resources */,
 				1580773523EF1E53007A6711 /* HomeViewController.xib in Resources */,
 				1592C74623F0C405007C321C /* ReadMeTableViewCell.xib in Resources */,
+				150F3C8523F39B13001BE5A7 /* FilterCollectionViewCell.xib in Resources */,
 				156A6C6D23F1F6600079A6D1 /* DefaultCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,6 +587,7 @@
 				1554905423EF6E340025D97D /* UICollectionView+Utils.swift in Sources */,
 				1554905023EF682F0025D97D /* String+Utils.swift in Sources */,
 				1580773123EF1DBC007A6711 /* UIViewController+Utils.swift in Sources */,
+				150F3C8823F3A4BA001BE5A7 /* FilterCarouselCollectionViewCell.swift in Sources */,
 				1592C73523F0943D007C321C /* FiltersViewController.swift in Sources */,
 				1592C73A23F0AC8D007C321C /* Date+Utils.swift in Sources */,
 				1580773923EF1ECB007A6711 /* HomeViewModel.swift in Sources */,
@@ -604,6 +619,7 @@
 				1580773723EF1EA6007A6711 /* HomeCoordinator.swift in Sources */,
 				1554904C23EF67A20025D97D /* UIView+Utils.swift in Sources */,
 				1554904E23EF67D90025D97D /* UIColor+Utils.swift in Sources */,
+				150F3C8423F39B12001BE5A7 /* FilterCollectionViewCell.swift in Sources */,
 				1580772F23EF194B007A6711 /* AlertManager.swift in Sources */,
 				1580773F23EF52B1007A6711 /* Fetcher.swift in Sources */,
 				1580772D23EF18DB007A6711 /* BaseViewController.swift in Sources */,

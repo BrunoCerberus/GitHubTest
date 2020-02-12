@@ -11,6 +11,7 @@ import UIKit
 final class HomeViewController: BaseViewController {
     
     @IBOutlet weak var homeCollectionView: UICollectionView!
+    @IBOutlet weak var homeFlowLayout: UICollectionViewFlowLayout!
     
     private var viewModel: HomeViewModel!
     private var refreshControl: UIRefreshControl!
@@ -76,6 +77,7 @@ final class HomeViewController: BaseViewController {
     private func registerCells() {
         homeCollectionView.register(DefaultCollectionViewCell.self)
         homeCollectionView.register(RepoCollectionViewCell.self)
+        homeCollectionView.register(FilterCarouselCollectionViewCell.self)
     }
     
     // MARK: Add a Activity Indicator in the homeCollectionView
@@ -155,7 +157,7 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch HomeSection(rawValue: indexPath.section) {
         case .filter:
-            return homeCollectionView.dequeueReusableCell(of: DefaultCollectionViewCell.self, for: indexPath)
+            return homeCollectionView.dequeueReusableCell(of: FilterCarouselCollectionViewCell.self, for: indexPath)
         case .repos:
             return homeCollectionView.dequeueReusableCell(of: RepoCollectionViewCell.self, for: indexPath) { [weak self] cell in
                 guard let repo = self?.viewModel.getRepository(in: indexPath) else { return }
@@ -175,7 +177,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         
         switch HomeSection(rawValue: indexPath.section) {
         case .filter:
-            return CGSize(width: collectionView.frame.width - 16, height: 1)
+            return CGSize(width: collectionView.frame.width, height: 56)
         case .repos:
             return CGSize(width: collectionView.frame.width - 16, height: 155)
         default:
@@ -188,7 +190,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         switch HomeSection(rawValue: section) {
         case .filter:
-            return .zero
+            return UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         case .repos:
             return UIEdgeInsets(top: 16, left: 8, bottom: 0, right: 8)
         default:
