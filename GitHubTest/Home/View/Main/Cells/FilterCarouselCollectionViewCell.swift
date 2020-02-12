@@ -38,10 +38,18 @@ class FilterCarouselCollectionViewCell: UICollectionViewCell {
         bindCollectionView()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+    
     private func bindAddFilter() {
         appdelegate.appCoordinator.homeCoordinator?
             .filtersViewController.task.subscribe(onNext: { [weak self] task in
-            self?.tasks.value.append(task)
+                if (self?.tasks.value.map {$0.title})?.contains(task.title) ?? false {
+                    self?.tasks.value.remove(object: task)
+                } else {
+                    self?.tasks.value.append(task)
+                }
         }).disposed(by: disposeBag)
     }
     
@@ -92,10 +100,8 @@ extension FilterCarouselCollectionViewCell: UICollectionViewDelegateFlowLayout {
 
 extension FilterCarouselCollectionViewCell: FilterCollectionViewDelegate {
     func removeFilterWith(name: String) {
-        for (id, filter) in tasks.value.enumerated() where filter.title == name {
-            tasks.value.remove(at: id)
-            UserDefaults.standard.set(false, forKey: "\(name)-selected")
-        }
+        tasks.value.remove(object: Filter(title: name))
+        UserDefaults.standard.set(false, forKey: "\(name)-selected")
         if tasks.value.count == 0 {
             delegate?.performBatchUpdates(height: 1)
         }

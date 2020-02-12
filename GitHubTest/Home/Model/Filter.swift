@@ -10,4 +10,11 @@ import Foundation
 
 struct Filter {
     var title: String
+    
+}
+
+extension Filter: Equatable {
+    static func ==(lhs: Filter, rhs: Filter) -> Bool {
+        return lhs.title == rhs.title
+    }
 }

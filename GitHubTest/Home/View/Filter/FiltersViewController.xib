@@ -155,7 +155,7 @@
                     </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oew-cL-Xs4">
-                    <rect key="frame" x="52" y="791" width="311" height="45"/>
+                    <rect key="frame" x="52" y="746" width="311" height="90"/>
                     <state key="normal" image="BTN_FILTER"/>
                     <connections>
                         <action selector="submitFilter:" destination="-1" eventType="touchUpInside" id="joG-LD-q0X"/>
