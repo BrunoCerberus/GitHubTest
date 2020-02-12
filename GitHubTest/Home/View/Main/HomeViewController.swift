@@ -19,6 +19,8 @@ final class HomeViewController: BaseViewController {
     private var dispatchGroup: DispatchGroup!
     private var pageCount: Int = 1
     
+    var carouselFilterHeight: CGFloat = 1
+    
     enum HomeSection: Int {
         case filter
         case repos
@@ -179,7 +181,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         
         switch HomeSection(rawValue: indexPath.section) {
         case .filter:
-            return CGSize(width: collectionView.frame.width, height: 56)
+            return CGSize(width: collectionView.frame.width, height: carouselFilterHeight)
         case .repos:
             return CGSize(width: collectionView.frame.width - 16, height: 155)
         default:
@@ -224,5 +226,10 @@ extension HomeViewController: HomeViewModelViewDelegate {
 extension HomeViewController: FilterCarouselCollectionViewDelegate {
     func filter(with words: [String]) {
         //filter the data
+    }
+    
+    func performBatchUpdates(height: CGFloat) {
+        carouselFilterHeight = height
+        homeCollectionView.performBatchUpdates(nil, completion: nil)
     }
 }

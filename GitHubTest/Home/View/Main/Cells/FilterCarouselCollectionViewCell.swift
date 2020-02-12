@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 
 protocol FilterCarouselCollectionViewDelegate: AnyObject {
+    func performBatchUpdates(height: CGFloat)
     func filter(with words: [String])
 }
 
@@ -50,9 +51,10 @@ class FilterCarouselCollectionViewCell: UICollectionViewCell {
             .bind(to: carouselFilterCollectionView
                 .rx
                 .items(cellIdentifier: "FilterCollectionViewCell",
-                       cellType: FilterCollectionViewCell.self)) { _, element, cell in
+                       cellType: FilterCollectionViewCell.self)) { [weak self] _, element, cell in
                 
                         cell.setup(filterName: element.title)
+                        self?.delegate?.performBatchUpdates(height: 56)
                 
         }.disposed(by: disposeBag)
     }
