@@ -25,9 +25,9 @@
 - [x]  Pull-to-refresh
 
 ## Features
-- [ ] Home
-- [ ] Filter
-- [ ] Detail
+- [x] Home
+- [x] Filter
+- [x] Detail
 
 ## Author
 
