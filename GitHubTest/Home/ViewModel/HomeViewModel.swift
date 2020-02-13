@@ -118,6 +118,7 @@ class HomeViewModel {
     func requesReposList(in page: Int = 1) {
         homeService.getRepos(with: page, onSuccess: { [weak self] repos in
             guard let self = self else { return }
+            self.filteredList.removeAll()
             if page == 1 {
                 self.repoList = repos
                 self.filteredList.removeAll()

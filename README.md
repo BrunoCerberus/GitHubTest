@@ -2,12 +2,11 @@
 
 ## Observations before start
 Project almost finished, some points are different from the layout, but due the short deadline it was the best i could do, hope you like it 😁.
-PS: If something goes wrong on device, please, use a simulator.
 
 ## Requirements for running this project
 - Xcode 11.3.1
 - SwiftLint
-- iOS 13+
+- iOS 11+
  
 ## Development Roadmap
 

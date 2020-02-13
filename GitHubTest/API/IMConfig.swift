@@ -31,6 +31,7 @@ class IMConfig<T: Fetcher> {
         
         var request = URLRequest(url: urlRequest)
         request.httpMethod = method.rawValue
+        request.addValue("token \(API.ApiKey)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let session = URLSession.shared
         
