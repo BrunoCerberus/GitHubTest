@@ -18,7 +18,7 @@
 - [x] Dependencies Manager (Carthage)
 - [x] Code Analyser (Swiftlint)
 - [x] POP
-- [ ] RxSwift
+- [x] RxSwift
 - [ ] High Order Function
 - [x] Custom components
 - [x]  Persistence with UserDefaults
