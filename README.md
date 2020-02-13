@@ -1,5 +1,8 @@
 # GitHubTest
 
+## Observations before start
+Project almost finished, some points are different from the layout, but because of the short deadline it was the best I could do, I hope you like it 😁.
+
 ## Requirements for running this project
 - Xcode 11.3.1
 - SwiftLint
@@ -19,11 +22,11 @@
 - [x] Code Analyser (Swiftlint)
 - [x] POP
 - [x] RxSwift
-- [ ] High Order Function
+- [x] High Order Function
 - [x] Custom components
-- [x]  Persistence with UserDefaults
-- [x]  infinite Scrolling
-- [x]  Pull-to-refresh
+- [x] Persistence with UserDefaults
+- [x] Infinite Scrolling
+- [x] Pull-to-refresh
 
 ## Features
 - [x] Home
