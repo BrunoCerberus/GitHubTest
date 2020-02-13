@@ -14,7 +14,7 @@ struct Filter {
 }
 
 extension Filter: Equatable {
-    static func ==(lhs: Filter, rhs: Filter) -> Bool {
+    static func == (lhs: Filter, rhs: Filter) -> Bool {
         return lhs.title == rhs.title
     }
 }
