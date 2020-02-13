@@ -38,8 +38,20 @@ final class FiltersViewController: UIViewController {
         descendingButton.checkState()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    private func registerForPultToRefresh() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(cleanFilters),
+                                               name: .pullToRefresh,
+                                               object: nil)
+    }
+    
     private func setup() {
         addButtonItem()
+        registerForPultToRefresh()
     }
     
     private func addButtonItem() {
@@ -52,21 +64,45 @@ final class FiltersViewController: UIViewController {
     }
     
     @objc private func cleanFilters() {
-        
+        unselectFilterButtons()
+        unselectOrderButtons()
+    }
+    
+    private func unselectFilterButtons() {
         if starsButton.selectedState == .selected { self.task.onNext(Filter(title: starsButton.titleLabel?.text ?? "")) }
         if watchersButton.selectedState == .selected { self.task.onNext(Filter(title: watchersButton.titleLabel?.text ?? "")) }
         if dateButton.selectedState == .selected { self.task.onNext(Filter(title: dateButton.titleLabel?.text ?? "")) }
-        if ascendingButton.selectedState == .selected { self.task.onNext(Filter(title: ascendingButton.titleLabel?.text ?? "")) }
-        if descendingButton.selectedState == .selected { self.task.onNext(Filter(title: descendingButton.titleLabel?.text ?? "")) }
         
         starsButton.removeImage()
         watchersButton.removeImage()
         dateButton.removeImage()
+    }
+    
+    private func unselectOrderButtons() {
+        if ascendingButton.selectedState == .selected { self.task.onNext(Filter(title: ascendingButton.titleLabel?.text ?? "")) }
+        if descendingButton.selectedState == .selected { self.task.onNext(Filter(title: descendingButton.titleLabel?.text ?? "")) }
         ascendingButton.removeImage()
         descendingButton.removeImage()
     }
+    
     @IBAction func selectButton(_ sender: FilterButton) {
+        switch sender {
+        case starsButton, watchersButton, dateButton:
+            if sender.selectedState == .unselected {
+                unselectFilterButtons()
+            }
+        case ascendingButton, descendingButton:
+            if sender.selectedState == .unselected {
+                unselectOrderButtons()
+            }
+        default:break
+        }
+        
         self.task.onNext(Filter(title: sender.titleLabel?.text ?? ""))
         sender.didSelect()
+    }
+    
+    @IBAction func applyFilter(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
 }

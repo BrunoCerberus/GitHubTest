@@ -12,7 +12,6 @@ import RxCocoa
 
 protocol FilterCarouselCollectionViewDelegate: AnyObject {
     func performBatchUpdates(height: CGFloat)
-    func filter(with words: [String])
 }
 
 class FilterCarouselCollectionViewCell: UICollectionViewCell {

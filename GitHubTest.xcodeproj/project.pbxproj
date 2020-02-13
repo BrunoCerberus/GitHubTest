@@ -68,6 +68,7 @@
 		1592C74223F0C3BE007C321C /* SecondaryInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1592C74023F0C3BE007C321C /* SecondaryInfoTableViewCell.xib */; };
 		1592C74523F0C405007C321C /* ReadMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592C74323F0C405007C321C /* ReadMeTableViewCell.swift */; };
 		1592C74623F0C405007C321C /* ReadMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1592C74423F0C405007C321C /* ReadMeTableViewCell.xib */; };
+		159FE1F423F4DA0000148D33 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FE1F323F4DA0000148D33 /* Notifications.swift */; };
 		15A6D76823F0591400B0513A /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A6D76723F0591400B0513A /* HomeService.swift */; };
 		15A6D76A23F0591E00B0513A /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A6D76923F0591E00B0513A /* HomeAPI.swift */; };
 		15A6D76C23F05B1D00B0513A /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A6D76B23F05B1D00B0513A /* RepositoryModel.swift */; };
@@ -162,6 +163,7 @@
 		1592C74023F0C3BE007C321C /* SecondaryInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondaryInfoTableViewCell.xib; sourceTree = "<group>"; };
 		1592C74323F0C405007C321C /* ReadMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMeTableViewCell.swift; sourceTree = "<group>"; };
 		1592C74423F0C405007C321C /* ReadMeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReadMeTableViewCell.xib; sourceTree = "<group>"; };
+		159FE1F323F4DA0000148D33 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		15A010E823EF713B00FF8F9C /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		15A010ED23EF749500FF8F9C /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		15A010F123EF749900FF8F9C /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 		1580771623EF13F7007A6711 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				159FE1F223F4D9DE00148D33 /* Notifications */,
 				1580771B23EF1424007A6711 /* Network */,
 				1580771A23EF1415007A6711 /* View */,
 				1580771923EF140F007A6711 /* ViewModel */,
@@ -420,6 +423,14 @@
 				1570FA3823F4ACF800F88D19 /* Array+Utils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		159FE1F223F4D9DE00148D33 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				159FE1F323F4DA0000148D33 /* Notifications.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		15A010E723EF713B00FF8F9C /* Frameworks */ = {
@@ -619,6 +630,7 @@
 				1592C74523F0C405007C321C /* ReadMeTableViewCell.swift in Sources */,
 				1580772223EF166D007A6711 /* IMNavigationController.swift in Sources */,
 				1567A1F723F31A2D005A9DFF /* UIScrollView+BottomRefreshControl.m in Sources */,
+				159FE1F423F4DA0000148D33 /* Notifications.swift in Sources */,
 				156A6C6823F1F61C0079A6D1 /* DefaultTableViewCell.swift in Sources */,
 				1570FA3923F4ACF800F88D19 /* Array+Utils.swift in Sources */,
 				1592C74123F0C3BE007C321C /* SecondaryInfoTableViewCell.swift in Sources */,

@@ -43,6 +43,12 @@ final class HomeViewController: BaseViewController {
         setup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        filterRepos()
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -52,6 +58,14 @@ final class HomeViewController: BaseViewController {
         registerCells()
         addRefreshControl()
         refreshHome()
+    }
+    
+    private func filterRepos() {
+        let indexPath = IndexPath(row: 0, section: HomeSection.filter.rawValue)
+        if let carousel = homeCollectionView.cellForItem(at: indexPath) as? FilterCarouselCollectionViewCell {
+            let filter: [String] = carousel.tasks.value.count > 0 ? carousel.tasks.value.map {$0.title} : [""]
+            viewModel.fetchFilteredRepoList(values: filter)
+        }
     }
     
     private func registerBarButtonItems() {
@@ -107,6 +121,9 @@ final class HomeViewController: BaseViewController {
                 self?.pageCount = 1
                 self?.refreshControl.endRefreshing()
                 self?.homeCollectionView.reloadData()
+                NotificationCenter.default.post(name: .pullToRefresh,
+                                                object: nil,
+                                                userInfo: nil)
             }
         }
     }
@@ -220,16 +237,25 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 extension HomeViewController: HomeViewModelViewDelegate {
     func homeViewModel(_ viewModel: HomeViewModel, didFetch result: Result<Any?, IMError>) {
         dispatchGroup.leave()
+        carouselFilterHeight = 1
+        DispatchQueue.main.async { [weak self] in
+            self?.homeCollectionView.performBatchUpdates(nil, completion: nil)
+        }
+    }
+    
+    func homeViewModelDidFinishFilter(_ viewModel: HomeViewModel) {
+        DispatchQueue.main.async { [weak self] in
+            self?.homeCollectionView.reloadSections(IndexSet(integer: HomeSection.repos.rawValue))
+        }
     }
 }
 
 extension HomeViewController: FilterCarouselCollectionViewDelegate {
-    func filter(with words: [String]) {
-        //filter the data
-    }
-    
     func performBatchUpdates(height: CGFloat) {
         carouselFilterHeight = height
-        homeCollectionView.performBatchUpdates(nil, completion: nil)
+        filterRepos()
+        DispatchQueue.main.async { [weak self] in
+            self?.homeCollectionView.performBatchUpdates(nil, completion: nil)
+        }
     }
 }

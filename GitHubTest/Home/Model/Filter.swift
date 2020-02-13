@@ -18,3 +18,14 @@ extension Filter: Equatable {
         return lhs.title == rhs.title
     }
 }
+
+enum Filters: String {
+    case stars = "ESTRELAS"
+    case watchers = "SEGUIDORES"
+    case date = "DATA"
+}
+
+enum FiltersOrder: String {
+    case ascending = "CRESCENTE"
+    case descending = "DECRESCENTE"
+}
