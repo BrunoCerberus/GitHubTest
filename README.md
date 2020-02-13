@@ -15,7 +15,7 @@ Project almost finished, some points are different from the layout, but due the 
 - [x] MVVM
 - [x] Xib
 - [x] Coordinator
-- [ ] Unit Tests
+- [x] Unit Tests
 - [x] Network layer
 - [x] GitHub Developer V3 API
 - [x] Dependencies Manager (Carthage)
