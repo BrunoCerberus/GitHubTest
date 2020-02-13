@@ -1,7 +1,7 @@
 # GitHubTest
 
 ## Observations before start
-Project almost finished, some points are different from the layout, but due the short deadline it was the best i could do, hope you like it 😁. Is for some reason, the request comes not authorized because of a OAUTH token, use this token `99a4bc3599e653a1593a2052a8e45643ceee2e37` instead in `BaseService.swift`, just change the value of the `ApiKey`and use the new one.
+Project almost finished, some points are different from the layout, but due the short deadline it was the best i could do, hope you like it 😁. Is for some reason, the request comes not authorized because of a OAUTH token, use this token `99a4bc3599e653a1593a2052a8e45643ceee2e37` instead in `BaseService.swift`, just change the value of the `ApiKey`and use the new one, if the problem still persists, leave the variable value as empty `""`. This hapens because there is a security system on GitHub that removes every OAUTH token that appears in a public repository.
 
 ## Requirements for running this project
 - Xcode 11.3.1
