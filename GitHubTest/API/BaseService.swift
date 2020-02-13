@@ -10,7 +10,7 @@ import Foundation
 
 enum API {
     static let baseUrl = "https://api.github.com"
-    static let ApiKey = "2f60cdf4a1b5715a8f0d1dec0356f2ae3ac3a3d3"
+    static let ApiKey = "4c34e8707be77b7c428bfaec57d8bf08570a4184"
     static var apiEndPoint: String {
         let value = "\(API.baseUrl)"
         return value
