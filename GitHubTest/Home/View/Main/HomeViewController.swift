@@ -237,10 +237,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 extension HomeViewController: HomeViewModelViewDelegate {
     func homeViewModel(_ viewModel: HomeViewModel, didFetch result: Result<Any?, IMError>) {
         dispatchGroup.leave()
-        carouselFilterHeight = 1
-        DispatchQueue.main.async { [weak self] in
-            self?.homeCollectionView.performBatchUpdates(nil, completion: nil)
-        }
     }
     
     func homeViewModelDidFinishFilter(_ viewModel: HomeViewModel) {

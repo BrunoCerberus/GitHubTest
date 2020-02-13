@@ -13,6 +13,7 @@
 		150F3C8523F39B13001BE5A7 /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 150F3C8323F39B12001BE5A7 /* FilterCollectionViewCell.xib */; };
 		150F3C8823F3A4BA001BE5A7 /* FilterCarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150F3C8623F3A4BA001BE5A7 /* FilterCarouselCollectionViewCell.swift */; };
 		150F3C8923F3A4BA001BE5A7 /* FilterCarouselCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 150F3C8723F3A4BA001BE5A7 /* FilterCarouselCollectionViewCell.xib */; };
+		1512ADA323F4F3D70067DD1C /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1512ADA223F4F3D70067DD1C /* HomeViewModelTest.swift */; };
 		1530268A23EF761D00B4F2D0 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A010ED23EF749500FF8F9C /* RxSwift.framework */; };
 		1530268B23EF761D00B4F2D0 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15A010ED23EF749500FF8F9C /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1530268D23EF762500B4F2D0 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A010F123EF749900FF8F9C /* RxCocoa.framework */; };
@@ -38,7 +39,6 @@
 		158076F523EF12F0007A6711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158076F423EF12F0007A6711 /* AppDelegate.swift */; };
 		158076FE23EF12F2007A6711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 158076FD23EF12F2007A6711 /* Assets.xcassets */; };
 		1580770123EF12F2007A6711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158076FF23EF12F2007A6711 /* LaunchScreen.storyboard */; };
-		1580770C23EF12F2007A6711 /* GitHubTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580770B23EF12F2007A6711 /* GitHubTestTests.swift */; };
 		1580771F23EF15EE007A6711 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580771E23EF15EE007A6711 /* BaseCoordinator.swift */; };
 		1580772223EF166D007A6711 /* IMNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580772123EF166D007A6711 /* IMNavigationController.swift */; };
 		1580772523EF16FC007A6711 /* UIBarButtonItem+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580772423EF16FC007A6711 /* UIBarButtonItem+Utils.swift */; };
@@ -107,6 +107,7 @@
 		150F3C8323F39B12001BE5A7 /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		150F3C8623F3A4BA001BE5A7 /* FilterCarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCarouselCollectionViewCell.swift; sourceTree = "<group>"; };
 		150F3C8723F3A4BA001BE5A7 /* FilterCarouselCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCarouselCollectionViewCell.xib; sourceTree = "<group>"; };
+		1512ADA223F4F3D70067DD1C /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
 		1530269023EF7B1900B4F2D0 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		1554903F23EF59560025D97D /* IMConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMConfig.swift; sourceTree = "<group>"; };
 		1554904323EF5BAD0025D97D /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -132,7 +133,6 @@
 		1580770023EF12F2007A6711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1580770223EF12F2007A6711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1580770723EF12F2007A6711 /* GitHubTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1580770B23EF12F2007A6711 /* GitHubTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTestTests.swift; sourceTree = "<group>"; };
 		1580770D23EF12F2007A6711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1580771E23EF15EE007A6711 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		1580772123EF166D007A6711 /* IMNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMNavigationController.swift; sourceTree = "<group>"; };
@@ -304,7 +304,7 @@
 		1580770A23EF12F2007A6711 /* GitHubTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				1580770B23EF12F2007A6711 /* GitHubTestTests.swift */,
+				1512ADA223F4F3D70067DD1C /* HomeViewModelTest.swift */,
 				1580770D23EF12F2007A6711 /* Info.plist */,
 			);
 			path = GitHubTestTests;
@@ -500,6 +500,7 @@
 					};
 					1580770623EF12F2007A6711 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 						TestTargetID = 158076F023EF12F0007A6711;
 					};
 				};
@@ -652,7 +653,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1580770C23EF12F2007A6711 /* GitHubTestTests.swift in Sources */,
+				1512ADA323F4F3D70067DD1C /* HomeViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -803,7 +804,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = GitHubTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -827,7 +828,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = GitHubTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -845,6 +846,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RDTR6557FX;
 				INFOPLIST_FILE = GitHubTestTests/Info.plist;
@@ -856,6 +858,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = bruno.GitHubTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitHubTest.app/GitHubTest";
@@ -867,6 +870,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RDTR6557FX;
 				INFOPLIST_FILE = GitHubTestTests/Info.plist;
