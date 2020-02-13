@@ -27,6 +27,8 @@ Project almost finished, some points are different from the layout, but due the 
 - [x] Persistence with UserDefaults
 - [x] Infinite Scrolling
 - [x] Pull-to-refresh
+- [x] Notification Center
+- [x] Grand Central Dispatch
 
 ## Features
 - [x] Home
