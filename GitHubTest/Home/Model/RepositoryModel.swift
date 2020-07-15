@@ -14,10 +14,10 @@ typealias Repository = [RepositoryElement]
 struct RepositoryElement: IMCodable {
     let id: Int?
     let nodeID, name, fullName: String?
-    let repositoryPrivate: Bool?
+    let welcomePrivate: Bool?
     let owner: Owner?
     let htmlURL: String?
-    let repositoryDescription: String?
+    let welcomeDescription: String?
     let fork: Bool?
     let url: String?
     let forksURL: String?
@@ -53,7 +53,6 @@ struct RepositoryElement: IMCodable {
     let openIssuesCount: Int?
     let license: License?
     let forks, openIssues, watchers: Int?
-    let defaultBranch: DefaultBranch?
     let permissions: Permissions?
 
     enum CodingKeys: String, CodingKey {
@@ -61,10 +60,10 @@ struct RepositoryElement: IMCodable {
         case nodeID = "node_id"
         case name
         case fullName = "full_name"
-        case repositoryPrivate = "private"
+        case welcomePrivate = "private"
         case owner
         case htmlURL = "html_url"
-        case repositoryDescription = "description"
+        case welcomeDescription = "description"
         case fork, url
         case forksURL = "forks_url"
         case keysURL = "keys_url"
@@ -124,14 +123,8 @@ struct RepositoryElement: IMCodable {
         case license, forks
         case openIssues = "open_issues"
         case watchers
-        case defaultBranch = "default_branch"
         case permissions
     }
-}
-
-enum DefaultBranch: String, Codable {
-    case master = "master"
-    case the4Stable = "4-stable"
 }
 
 // MARK: - License
