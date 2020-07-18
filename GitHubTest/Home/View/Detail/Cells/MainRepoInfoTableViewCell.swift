@@ -14,10 +14,19 @@ class MainRepoInfoTableViewCell: BaseTableViewCell {
     @IBOutlet weak var repoNameLabel: UILabel!
     @IBOutlet weak var starsLabel: UILabel!
     
-    func setup(repo: RepositoryElement) {
+    private func setup(repo: RepositoryElement) {
         repoNameLabel.text = repo.name
         starsLabel.text = "\(repo.stargazersCount ?? 0)"
         guard let imageURL = repo.owner?.avatarURL else { return }
         repoImage.downloaded(from: imageURL)
+    }
+    
+    override func bindData(_ data: Any?...) {
+        guard let item = data.first as? RepoDetailCellType else { return }
+        switch item {
+        case .main(let repo):
+            setup(repo: repo)
+        default: break
+        }
     }
 }

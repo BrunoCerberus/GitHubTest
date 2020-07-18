@@ -15,10 +15,19 @@ class SecondaryInfoTableViewCell: BaseTableViewCell {
     @IBOutlet weak var sizeLabel: UILabel!
     @IBOutlet weak var issuesLabel: UILabel!
     
-    func setup(repo: RepositoryElement) {
+    private func setup(repo: RepositoryElement) {
         forksLabel.text = "\(repo.forksCount ?? 0)"
         followersLabel.text = "\(repo.watchersCount ?? 0)"
         sizeLabel.text = "\(repo.size ?? 0)"
         issuesLabel.text = "\(repo.openIssuesCount ?? 0)"
+    }
+    
+    override func bindData(_ data: Any?...) {
+        guard let item = data.first as? RepoDetailCellType else { return }
+        switch item {
+        case .secondary(let repo):
+            setup(repo: repo)
+        default: break
+        }
     }
 }

@@ -68,7 +68,7 @@ final class RepoDetailViewController: BaseViewController {
             .drive(detailTableView.rx.items) {(cv, row, element) in
                 let indexPath = IndexPath(row: row, section: 0)
                 let cell = cv.dequeueBaseCell(with: element.cellType(), for: indexPath)
-                cell.bindData(element.cellType())
+                cell.bindData(element)
                 return cell
         }.disposed(by: disposeBag)
     }

@@ -15,4 +15,13 @@ class ReadMeTableViewCell: BaseTableViewCell {
     func setup(repo: RepositoryElement) {
         
     }
+    
+    override func bindData(_ data: Any?...) {
+        guard let item = data.first as? RepoDetailCellType else { return }
+        switch item {
+        case .readMe(let repo):
+            setup(repo: repo)
+        default: break
+        }
+    }
 }
