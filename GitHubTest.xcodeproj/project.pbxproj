@@ -57,6 +57,10 @@
 		1580774323EF55A7007A6711 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580774223EF55A7007A6711 /* BaseService.swift */; };
 		1585EFAC23F3B0E100EFB069 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1585EFAB23F3B0E100EFB069 /* Filter.swift */; };
 		158800BA24C371F700C1DE98 /* Stepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158800B924C371F700C1DE98 /* Stepper.swift */; };
+		158800BE24C3923900C1DE98 /* RepoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158800BD24C3923900C1DE98 /* RepoDetailViewModel.swift */; };
+		158800C024C3936F00C1DE98 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158800BF24C3936F00C1DE98 /* BaseTableViewCell.swift */; };
+		158800C224C393C600C1DE98 /* RepoDetailCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158800C124C393C600C1DE98 /* RepoDetailCellType.swift */; };
+		158CBC3924C3A52200BAE5F8 /* ClassNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158CBC3824C3A52200BAE5F8 /* ClassNameProtocol.swift */; };
 		1592C72F23F07CF1007C321C /* RepoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592C72D23F07CF1007C321C /* RepoCollectionViewCell.swift */; };
 		1592C73023F07CF1007C321C /* RepoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1592C72E23F07CF1007C321C /* RepoCollectionViewCell.xib */; };
 		1592C73523F0943D007C321C /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592C73323F0943D007C321C /* FiltersViewController.swift */; };
@@ -153,6 +157,10 @@
 		1580774223EF55A7007A6711 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		1585EFAB23F3B0E100EFB069 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		158800B924C371F700C1DE98 /* Stepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stepper.swift; sourceTree = "<group>"; };
+		158800BD24C3923900C1DE98 /* RepoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailViewModel.swift; sourceTree = "<group>"; };
+		158800BF24C3936F00C1DE98 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		158800C124C393C600C1DE98 /* RepoDetailCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailCellType.swift; sourceTree = "<group>"; };
+		158CBC3824C3A52200BAE5F8 /* ClassNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameProtocol.swift; sourceTree = "<group>"; };
 		1592C72D23F07CF1007C321C /* RepoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCollectionViewCell.swift; sourceTree = "<group>"; };
 		1592C72E23F07CF1007C321C /* RepoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoCollectionViewCell.xib; sourceTree = "<group>"; };
 		1592C73323F0943D007C321C /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +224,8 @@
 		150F3C7A23F38458001BE5A7 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				158800BC24C3914C00C1DE98 /* Model */,
+				158800BB24C3914100C1DE98 /* ViewModel */,
 				150F3C7D23F38494001BE5A7 /* Cells */,
 				1580773A23EF24A0007A6711 /* RepoDetailViewController.swift */,
 				1580773B23EF24A0007A6711 /* RepoDetailViewController.xib */,
@@ -403,6 +413,8 @@
 				1554905123EF6D680025D97D /* ActivityManager.swift */,
 				156A6C6A23F1F6600079A6D1 /* DefaultCollectionViewCell.swift */,
 				156A6C6B23F1F6600079A6D1 /* DefaultCollectionViewCell.xib */,
+				158800BF24C3936F00C1DE98 /* BaseTableViewCell.swift */,
+				158CBC3824C3A52200BAE5F8 /* ClassNameProtocol.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -426,6 +438,22 @@
 				1570FA3823F4ACF800F88D19 /* Array+Utils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		158800BB24C3914100C1DE98 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				158800BD24C3923900C1DE98 /* RepoDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		158800BC24C3914C00C1DE98 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				158800C124C393C600C1DE98 /* RepoDetailCellType.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		159FE1F223F4D9DE00148D33 /* Notifications */ = {
@@ -620,6 +648,7 @@
 				158076F523EF12F0007A6711 /* AppDelegate.swift in Sources */,
 				15A6D76823F0591400B0513A /* HomeService.swift in Sources */,
 				1554904023EF59560025D97D /* IMConfig.swift in Sources */,
+				158800C024C3936F00C1DE98 /* BaseTableViewCell.swift in Sources */,
 				1554905223EF6D680025D97D /* ActivityManager.swift in Sources */,
 				1554904623EF5C0D0025D97D /* IMError.swift in Sources */,
 				1554904423EF5BAD0025D97D /* Reachability.swift in Sources */,
@@ -631,12 +660,14 @@
 				1580771F23EF15EE007A6711 /* BaseCoordinator.swift in Sources */,
 				1580774323EF55A7007A6711 /* BaseService.swift in Sources */,
 				1580773423EF1E53007A6711 /* HomeViewController.swift in Sources */,
+				158800BE24C3923900C1DE98 /* RepoDetailViewModel.swift in Sources */,
 				1592C74523F0C405007C321C /* ReadMeTableViewCell.swift in Sources */,
 				1580772223EF166D007A6711 /* IMNavigationController.swift in Sources */,
 				158800BA24C371F700C1DE98 /* Stepper.swift in Sources */,
 				1567A1F723F31A2D005A9DFF /* UIScrollView+BottomRefreshControl.m in Sources */,
 				159FE1F423F4DA0000148D33 /* Notifications.swift in Sources */,
 				156A6C6823F1F61C0079A6D1 /* DefaultTableViewCell.swift in Sources */,
+				158800C224C393C600C1DE98 /* RepoDetailCellType.swift in Sources */,
 				1570FA3923F4ACF800F88D19 /* Array+Utils.swift in Sources */,
 				1592C74123F0C3BE007C321C /* SecondaryInfoTableViewCell.swift in Sources */,
 				1592C73823F09B24007C321C /* Encodable+Utils.swift in Sources */,
@@ -646,6 +677,7 @@
 				150F3C8423F39B12001BE5A7 /* FilterCollectionViewCell.swift in Sources */,
 				1585EFAC23F3B0E100EFB069 /* Filter.swift in Sources */,
 				1580772F23EF194B007A6711 /* AlertManager.swift in Sources */,
+				158CBC3924C3A52200BAE5F8 /* ClassNameProtocol.swift in Sources */,
 				1580773F23EF52B1007A6711 /* Fetcher.swift in Sources */,
 				1580772D23EF18DB007A6711 /* BaseViewController.swift in Sources */,
 				1554904A23EF675E0025D97D /* UITableView+Utils.swift in Sources */,

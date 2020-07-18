@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainRepoInfoTableViewCell: UITableViewCell {
+class MainRepoInfoTableViewCell: BaseTableViewCell {
 
     @IBOutlet weak var repoImage: UIImageView!
     @IBOutlet weak var repoNameLabel: UILabel!

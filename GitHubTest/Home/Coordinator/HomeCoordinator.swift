@@ -65,7 +65,8 @@ final class HomeCoordinator: BaseCoordinator {
     
     private func showRepoDetail(_ repo: RepositoryElement) {
         guard let navigationController = navigation else { return }
-        let detailViewController = RepoDetailViewController(repo: repo)
+        let viewModel = RepoDetailViewModel(repo: repo)
+        let detailViewController = RepoDetailViewController(viewModel: viewModel)
         let destinationNavigationController = IMNavigationViewController(rootViewController: detailViewController)
         navigationController.present(destinationNavigationController, animated: true, completion: nil)
     }

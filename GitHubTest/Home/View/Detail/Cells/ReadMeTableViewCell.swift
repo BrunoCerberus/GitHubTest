@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReadMeTableViewCell: UITableViewHeaderFooterView {
+class ReadMeTableViewCell: BaseTableViewCell {
     
     @IBOutlet weak var readMeLabel: UILabel!
     

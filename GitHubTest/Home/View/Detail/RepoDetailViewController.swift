@@ -22,14 +22,14 @@ final class RepoDetailViewController: BaseViewController {
         static var count: Int { return 3 }
     }
     
-    var repo: RepositoryElement!
+    var viewModel: RepoDetailViewModelProtocol?
     private var disposeBag: DisposeBag = DisposeBag()
     
     let tableViewCorners: CGFloat = 30
     
-    init(repo: RepositoryElement) {
+    init(viewModel: RepoDetailViewModelProtocol) {
         super.init(nibName: nil, bundle: nil)
-        self.repo = repo
+        self.viewModel = viewModel
     }
     
     required init?(coder: NSCoder) {
@@ -47,13 +47,14 @@ final class RepoDetailViewController: BaseViewController {
     }
     
     private func setupBind() {
+        detailTableView.tableFooterView = UIView()
         shareButton
             .rx
             .tap
             .asDriver()
             .throttle(.seconds(2))
             .drive(onNext: { [weak self] in
-                guard let repoUrl = self?.repo.htmlURL else {
+                guard let repoUrl = self?.viewModel?.repoURL else {
                     self?.displayGenericError()
                     return
                 }
@@ -61,60 +62,26 @@ final class RepoDetailViewController: BaseViewController {
                 vc.popoverPresentationController?.barButtonItem = self?.navigationItem.rightBarButtonItem
                 self?.present(vc, animated: true, completion: nil)
             }).disposed(by: disposeBag)
+        
+        viewModel?
+            .itemsDriver
+            .drive(detailTableView.rx.items) {(cv, row, element) in
+                let indexPath = IndexPath(row: row, section: 0)
+                let cell = cv.dequeueBaseCell(with: element.cellType(), for: indexPath)
+                cell.bindData(element.cellType())
+                return cell
+        }.disposed(by: disposeBag)
     }
     
     private func registerCells() {
-        detailTableView.register(MainRepoInfoTableViewCell.self)
-        detailTableView.register(SecondaryInfoTableViewCell.self)
-        detailTableView.registerHeaderFooter(ReadMeTableViewCell.self)
+        detailTableView.register(cellTypes: [
+            MainRepoInfoTableViewCell.self,
+            SecondaryInfoTableViewCell.self,
+            ReadMeTableViewCell.self
+        ])
     }
     
     private func roundCorners() {
         detailTableView.roundCorners(corners: [.topLeft, .topRight], radius: 20)
-    }
-}
-
-extension RepoDetailViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerView =  detailTableView.dequeueReusableHeaderFooterView(of: ReadMeTableViewCell.self)
-        footerView?.setup(repo: repo)
-        return footerView
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch RepoDetailRow(rawValue: indexPath.row) {
-        case .none:
-            return 1
-        default:
-            return UITableView.automaticDimension
-        }
-    }
-}
-
-extension RepoDetailViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView,
-                   numberOfRowsInSection section: Int) -> Int {
-        return RepoDetailRow.count
-    }
-    
-    func tableView(_ tableView: UITableView,
-                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch RepoDetailRow(rawValue: indexPath.row) {
-        case .mainInfo:
-            return detailTableView.dequeueReusableCell(of: MainRepoInfoTableViewCell.self,
-                                                       for: indexPath) { [weak self] cell in
-                                                        guard let self = self else { return }
-                                                        cell.setup(repo: self.repo)
-            }
-        case .secondaryInfo:
-            return detailTableView.dequeueReusableCell(of: SecondaryInfoTableViewCell.self,
-                                                       for: indexPath) { [weak self] cell in
-                                                        guard let self = self else { return }
-                                                        cell.setup(repo: self.repo)
-            }
-            
-        case .none:
-            return UITableViewCell()
-        }
     }
 }

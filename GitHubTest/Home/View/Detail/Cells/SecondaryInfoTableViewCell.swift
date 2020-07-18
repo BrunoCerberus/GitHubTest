@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondaryInfoTableViewCell: UITableViewCell {
+class SecondaryInfoTableViewCell: BaseTableViewCell {
 
     @IBOutlet weak var forksLabel: UILabel!
     @IBOutlet weak var followersLabel: UILabel!

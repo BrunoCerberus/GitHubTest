@@ -9,6 +9,13 @@
 import UIKit
 
 public extension UITableView {
+    
+    func register<T: UITableViewCell>(cellType: T.Type, bundle: Bundle? = nil) {
+        let className = cellType.className
+        let nib = UINib(nibName: className, bundle: bundle)
+        self.register(nib, forCellReuseIdentifier: className)
+    }
+    
     func register(_ cell: UITableViewCell.Type) {
         let nib = UINib(nibName: cell.identifier, bundle: nil)
         register(nib, forCellReuseIdentifier: cell.identifier)
@@ -21,6 +28,18 @@ public extension UITableView {
         } else {
             register(nib, forCellReuseIdentifier: nibName)
         }
+    }
+    
+    func register(cellTypes: [UITableViewCell.Type], bundle: Bundle? = nil) {
+        cellTypes.forEach { register(cellType: $0, bundle: bundle) }
+    }
+    
+    func dequeueBaseCell<T: BaseTableViewCell>(with type: T.Type, for indexPath: IndexPath) -> T {
+        guard let cell = dequeueReusableCell(withIdentifier: type.className,
+                                             for: indexPath) as? T
+            else { return T() }
+        
+        return cell
     }
     
     func registerHeaderFooter(_ reusableView: UITableViewHeaderFooterView.Type) {
@@ -66,6 +85,14 @@ public extension UITableView {
             }
         }
     }
+    
+//    func dequeueBaseCell<T: BaseTableViewCell>(with type: T.Type, for indexPath: IndexPath) -> T {
+//        guard let cell = dequeueReusableCell(withIdentifier: type.className,
+//                                             for: indexPath) as? T
+//            else { return T() }
+//        
+//        return cell
+//    }
     
     func dequeueReusableCell<T: UITableViewCell>(of class: T.Type,
                                                  for indexPath: IndexPath,
