@@ -7,21 +7,23 @@
 //
 
 import Foundation
-
-protocol HomeViewModelCoordinatorDelegate: AnyObject {
-    func homeViewModel(_ viewModel: HomeViewModel, show repoDetail: RepositoryElement)
-    func homeViewModelShowFilters(_ viewModel: HomeViewModel)
-}
+import RxSwift
+import RxCocoa
 
 protocol HomeViewModelViewDelegate: AnyObject {
     func homeViewModel(_ viewModel: HomeViewModel, didFetch result: Result<Any?, IMError>)
     func homeViewModelDidFinishFilter(_ viewModel: HomeViewModel)
 }
 
-class HomeViewModel {
+class HomeViewModel: Stepper {
     
-    weak var coordinatorDelegate: HomeViewModelCoordinatorDelegate?
-    weak var viewDelegate: HomeViewModelViewDelegate?
+    enum HomeViewModelSteps: Step {
+        case detail(RepositoryElement)
+        case filter
+    }
+    
+    var selectedStep = BehaviorRelay<HomeViewModelSteps?>(value: nil)
+    weak var delegate: HomeViewModelViewDelegate?
     
     var homeService: HomeService!
     
@@ -45,13 +47,13 @@ class HomeViewModel {
     }
     
     func showRepoDetail(with repo: RepositoryElement) {
-        coordinatorDelegate?.homeViewModel(self, show: repo)
+        selectedStep.accept(.detail(repo))
     }
     
     func fetchFilteredRepoList(values: [String]) {
         if values.isEmpty || values.contains("") {
             filteredList.removeAll()
-            viewDelegate?.homeViewModelDidFinishFilter(self)
+            delegate?.homeViewModelDidFinishFilter(self)
             return
         }
         
@@ -79,7 +81,7 @@ class HomeViewModel {
         })
         
         self.filteredList = localFilteredList
-        viewDelegate?.homeViewModelDidFinishFilter(self)
+        delegate?.homeViewModelDidFinishFilter(self)
     }
     
     private func sorterForStars(this: RepositoryElement,
@@ -125,13 +127,13 @@ class HomeViewModel {
             } else {
                 self.repoList.append(contentsOf: repos)
             }
-            self.viewDelegate?.homeViewModel(self, didFetch: .success(nil))
+            self.delegate?.homeViewModel(self, didFetch: .success(nil))
             }, onFail: { _ in
-                self.viewDelegate?.homeViewModel(self, didFetch: .failure(IMError.generic))
+                self.delegate?.homeViewModel(self, didFetch: .failure(IMError.generic))
         })
     }
     
     func showFilters() {
-        coordinatorDelegate?.homeViewModelShowFilters(self)
+        selectedStep.accept(.filter)
     }
 }

@@ -8,6 +8,8 @@
 
 import UIKit
 import Foundation
+import RxSwift
+import RxCocoa
 
 final class HomeCoordinator: BaseCoordinator {
     
@@ -18,6 +20,7 @@ final class HomeCoordinator: BaseCoordinator {
     var navigation: IMNavigationViewController?
     var presentationType: PresentationType?
     var viewModel: HomeViewModel!
+    private var disposeBag: DisposeBag = DisposeBag()
     
     var appDelegate: AppDelegate? {
         return UIApplication.shared.delegate as? AppDelegate
@@ -27,16 +30,26 @@ final class HomeCoordinator: BaseCoordinator {
         return UIScreen.main.bounds.width
     }()
     
-    // MARK: Controllers
-    var detailViewController: RepoDetailViewController!
     var filtersViewController: FiltersViewController = FiltersViewController()
     
     func start() {
         viewModel = HomeViewModel()
-        viewModel.coordinatorDelegate = self
-        view = HomeViewController(viewModel: viewModel)
+        viewModel
+            .selectedStep
+            .asDriver()
+            .drive(onNext: { [weak self] step in
+                guard let step = step else { return }
+                switch step {
+                case .detail(let repository):
+                    self?.showRepoDetail(repository)
+                case .filter:
+                    self?.showFilters()
+                }
+            }).disposed(by: disposeBag)
         
-        navigation = IMNavigationViewController(rootViewController: view!)
+        view = HomeViewController(viewModel: viewModel)
+        guard let view = view else { return }
+        navigation = IMNavigationViewController(rootViewController: view)
         window.rootViewController = navigation
     }
     
@@ -52,7 +65,7 @@ final class HomeCoordinator: BaseCoordinator {
     
     private func showRepoDetail(_ repo: RepositoryElement) {
         guard let navigationController = navigation else { return }
-        detailViewController = RepoDetailViewController(repo: repo)
+        let detailViewController = RepoDetailViewController(repo: repo)
         let destinationNavigationController = IMNavigationViewController(rootViewController: detailViewController)
         navigationController.present(destinationNavigationController, animated: true, completion: nil)
     }
@@ -60,15 +73,5 @@ final class HomeCoordinator: BaseCoordinator {
     @objc private func showFilters() {
         guard let navigationController = navigation else { return }
         navigationController.pushViewController(filtersViewController, animated: true)
-    }
-}
-
-extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
-    func homeViewModelShowFilters(_ viewModel: HomeViewModel) {
-        showFilters()
-    }
-    
-    func homeViewModel(_ viewModel: HomeViewModel, show repoDetail: RepositoryElement) {
-        showRepoDetail(repoDetail)
     }
 }

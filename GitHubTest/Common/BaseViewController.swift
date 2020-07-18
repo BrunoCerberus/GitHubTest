@@ -51,4 +51,8 @@ class BaseViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         setupDismissLeftBarButtonItem()
     }
+    
+    deinit {
+        debugPrint("DEINIT: \(self)")
+    }
 }

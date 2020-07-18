@@ -40,7 +40,7 @@ final class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.viewDelegate = self
+        viewModel.delegate = self
         title = "GitHub"
         
         setup()
