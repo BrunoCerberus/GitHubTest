@@ -78,7 +78,6 @@ final class HomeViewController: BaseViewController {
                                            target: self,
                                            action: nil)
         
-        
         filterButton
             .rx
             .tap
