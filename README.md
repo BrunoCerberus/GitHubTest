@@ -29,6 +29,9 @@ Project almost finished, some points are different from the layout, but due the 
 - [x] Pull-to-refresh
 - [x] Notification Center
 - [x] Grand Central Dispatch
+- [ ] Unit Testing
+- [ ] UI Testing
+- [ ] Accessibility
 
 ## Features
 - [x] Home
