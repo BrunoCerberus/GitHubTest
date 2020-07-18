@@ -24,8 +24,9 @@ class FilterCarouselCollectionViewCell: UICollectionViewCell {
         return (UIApplication.shared.delegate as? AppDelegate)!
     }
     
-    var tasks: Variable<[Filter]> = Variable([])
+    var tasks: BehaviorRelay<[Filter]> = BehaviorRelay(value: [])
     private let disposeBag = DisposeBag()
+    var filters: [Filter] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,10 +46,11 @@ class FilterCarouselCollectionViewCell: UICollectionViewCell {
         appdelegate.appCoordinator.homeCoordinator?
             .filtersViewController.task.subscribe(onNext: { [weak self] task in
                 if (self?.tasks.value.map {$0.title})?.contains(task.title) ?? false {
-                    self?.tasks.value.remove(object: task)
+                    self?.filters.remove(object: task)
                 } else {
-                    self?.tasks.value.append(task)
+                    self?.filters.append(task)
                 }
+                self?.tasks.accept(self?.filters ?? [])
                 if self?.tasks.value.count == 0 {
                     self?.delegate?.performBatchUpdates(height: 1)
                 }
@@ -102,7 +104,8 @@ extension FilterCarouselCollectionViewCell: UICollectionViewDelegateFlowLayout {
 
 extension FilterCarouselCollectionViewCell: FilterCollectionViewDelegate {
     func removeFilterWith(name: String) {
-        tasks.value.remove(object: Filter(title: name))
+        filters.remove(object: Filter(title: name))
+        tasks.accept(self.filters)
         UserDefaults.standard.set(false, forKey: "\(name)-selected")
         if tasks.value.count == 0 {
             delegate?.performBatchUpdates(height: 1)
