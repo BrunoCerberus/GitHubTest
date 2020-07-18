@@ -7,6 +7,7 @@ Project almost finished, some points are different from the layout, but due the 
 - Xcode 11.6
 - SwiftLint
 - iOS 11+
+- Swift 5.2.4+
  
 ## Development Roadmap
 
