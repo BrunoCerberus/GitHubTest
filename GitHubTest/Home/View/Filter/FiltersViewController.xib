@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FiltersViewController" customModule="GitHubTest" customModuleProvider="target">
             <connections>
+                <outlet property="applyButton" destination="eHB-ZR-OE9" id="hXV-g9-yWQ"/>
                 <outlet property="ascendingButton" destination="PTG-07-anU" id="1HR-As-5nO"/>
                 <outlet property="dateButton" destination="BFL-WB-Eh1" id="j8w-W5-l8F"/>
                 <outlet property="descendingButton" destination="jrF-Ef-zId" id="x8u-6H-MzH"/>
@@ -157,9 +158,6 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHB-ZR-OE9">
                     <rect key="frame" x="52" y="791" width="311" height="45"/>
                     <state key="normal" image="BTN_FILTER"/>
-                    <connections>
-                        <action selector="applyFilter:" destination="-1" eventType="touchUpInside" id="7oZ-qq-ciz"/>
-                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

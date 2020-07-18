@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 final class RepoDetailViewController: BaseViewController {
 
     @IBOutlet weak var detailTableView: UITableView!
+    @IBOutlet weak var shareButton: UIButton!
     
     enum RepoDetailRow: Int {
         case mainInfo
@@ -20,6 +23,7 @@ final class RepoDetailViewController: BaseViewController {
     }
     
     var repo: RepositoryElement!
+    private var disposeBag: DisposeBag = DisposeBag()
     
     let tableViewCorners: CGFloat = 30
     
@@ -39,6 +43,24 @@ final class RepoDetailViewController: BaseViewController {
         setupLeftCloseBarButtonItem()
         roundCorners()
         registerCells()
+        setupBind()
+    }
+    
+    private func setupBind() {
+        shareButton
+            .rx
+            .tap
+            .asDriver()
+            .throttle(.seconds(2))
+            .drive(onNext: { [weak self] in
+                guard let repoUrl = self?.repo.htmlURL else {
+                    self?.displayGenericError()
+                    return
+                }
+                let vc = UIActivityViewController(activityItems: [repoUrl], applicationActivities: [])
+                vc.popoverPresentationController?.barButtonItem = self?.navigationItem.rightBarButtonItem
+                self?.present(vc, animated: true, completion: nil)
+            }).disposed(by: disposeBag)
     }
     
     private func registerCells() {
@@ -50,17 +72,6 @@ final class RepoDetailViewController: BaseViewController {
     private func roundCorners() {
         detailTableView.roundCorners(corners: [.topLeft, .topRight], radius: 20)
     }
-    
-    @IBAction func share(_ sender: Any) {
-        guard let repoUrl = repo.htmlURL else {
-            displayGenericError()
-            return
-        }
-        let vc = UIActivityViewController(activityItems: [repoUrl], applicationActivities: [])
-        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
-        present(vc, animated: true, completion: nil)
-    }
-    
 }
 
 extension RepoDetailViewController: UITableViewDelegate {

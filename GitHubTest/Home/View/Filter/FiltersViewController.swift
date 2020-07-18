@@ -17,8 +17,10 @@ final class FiltersViewController: UIViewController {
     @IBOutlet weak var dateButton: FilterButton!
     @IBOutlet weak var ascendingButton: FilterButton!
     @IBOutlet weak var descendingButton: FilterButton!
+    @IBOutlet weak var applyButton: UIButton!
     
     let task = PublishSubject<Filter>()
+    private var disposeBag: DisposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,7 @@ final class FiltersViewController: UIViewController {
         title = "Filtrar"
         defaultBackButton()
         setup()
+        setupBind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +55,17 @@ final class FiltersViewController: UIViewController {
     private func setup() {
         addButtonItem()
         registerForPultToRefresh()
+    }
+    
+    private func setupBind() {
+        applyButton
+            .rx
+            .tap
+            .asDriver()
+            .throttle(.seconds(2))
+            .drive(onNext: { [weak self] in
+                self?.navigationController?.popViewController(animated: true)
+            }).disposed(by: disposeBag)
     }
     
     private func addButtonItem() {
@@ -100,9 +114,5 @@ final class FiltersViewController: UIViewController {
         
         self.task.onNext(Filter(title: sender.titleLabel?.text ?? ""))
         sender.didSelect()
-    }
-    
-    @IBAction func applyFilter(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
     }
 }
