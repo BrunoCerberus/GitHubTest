@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class HomeViewController: BaseViewController {
     
@@ -18,8 +20,9 @@ final class HomeViewController: BaseViewController {
     private var bottomRefreshControl: UIRefreshControl!
     private var dispatchGroup: DispatchGroup!
     private var pageCount: Int = 1
-    
     var carouselFilterHeight: CGFloat = 1
+    
+    private var disposeBag: DisposeBag = DisposeBag()
     
     enum HomeSection: Int {
         case filter
@@ -73,20 +76,22 @@ final class HomeViewController: BaseViewController {
                                            landscapeImagePhone: nil,
                                            style: .done,
                                            target: self,
-                                           action: #selector(showFilters))
+                                           action: nil)
         
-        let searchButton = UIBarButtonItem(image: UIImage(named: "ICO_SEARCH"),
-                                           landscapeImagePhone: nil,
-                                           style: .done,
-                                           target: self,
-                                           action: #selector(bringTextField))
+        
+        filterButton
+            .rx
+            .tap
+            .asDriver()
+            .throttle(.seconds(2))
+            .drive(onNext: { [weak self] in
+                self?.showFilters()
+            }).disposed(by: disposeBag)
         
         filterButton.tintColor = .imBarButtonItems
-        searchButton.tintColor = .imBarButtonItems
         
         navigationItem.rightBarButtonItems = [
-            filterButton,
-            searchButton
+            filterButton
         ]
     }
     
@@ -140,7 +145,7 @@ final class HomeViewController: BaseViewController {
         }
     }
     
-    @objc private func showFilters() {
+    private func showFilters() {
         viewModel.showFilters()
     }
     
