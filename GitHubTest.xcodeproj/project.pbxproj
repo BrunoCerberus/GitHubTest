@@ -58,7 +58,6 @@
 		158CBC4A24C4D26C00BAE5F8 /* repo_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 158CBC4924C4D26C00BAE5F8 /* repo_list.json */; };
 		158CBC4C24C4D28200BAE5F8 /* JSONModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158CBC4B24C4D28200BAE5F8 /* JSONModelFactory.swift */; };
 		158CBC4D24C4D63200BAE5F8 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1592C73923F0AC8D007C321C /* Date+Utils.swift */; };
-		158CBC7B24C4F46700BAE5F8 /* KIF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 158CBC4E24C4DF9800BAE5F8 /* KIF.framework */; };
 		158CBC7E24C4F60F00BAE5F8 /* HomeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158CBC7D24C4F60F00BAE5F8 /* HomeViewTests.swift */; };
 		158CBC8024C4F63200BAE5F8 /* HomeStubsNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158CBC7F24C4F63200BAE5F8 /* HomeStubsNetworking.swift */; };
 		158CBC8224C4F6BF00BAE5F8 /* IntegrationTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158CBC6124C4EA2900BAE5F8 /* IntegrationTestCase.swift */; };
@@ -83,10 +82,7 @@
 		15A6D76823F0591400B0513A /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A6D76723F0591400B0513A /* HomeService.swift */; };
 		15A6D76A23F0591E00B0513A /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A6D76923F0591E00B0513A /* HomeAPI.swift */; };
 		15A6D76C23F05B1D00B0513A /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A6D76B23F05B1D00B0513A /* RepositoryModel.swift */; };
-		15E0A70524C5057600F5C2A5 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15E0A70024C5057600F5C2A5 /* RxBlocking.framework */; };
-		15E0A70624C5057600F5C2A5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15E0A70124C5057600F5C2A5 /* RxCocoa.framework */; };
-		15E0A70824C5057600F5C2A5 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15E0A70324C5057600F5C2A5 /* RxRelay.framework */; };
-		15E0A70924C5057600F5C2A5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15E0A70424C5057600F5C2A5 /* RxSwift.framework */; };
+		15DFEAE924C5100200FDD2C2 /* KIF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15DFEAE824C50FFC00FDD2C2 /* KIF.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,8 +172,6 @@
 		158CBC3824C3A52200BAE5F8 /* ClassNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameProtocol.swift; sourceTree = "<group>"; };
 		158CBC4924C4D26C00BAE5F8 /* repo_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = repo_list.json; sourceTree = "<group>"; };
 		158CBC4B24C4D28200BAE5F8 /* JSONModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONModelFactory.swift; sourceTree = "<group>"; };
-		158CBC4E24C4DF9800BAE5F8 /* KIF.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KIF.framework; path = Carthage/Build/iOS/KIF.framework; sourceTree = "<group>"; };
-		158CBC5F24C4E84A00BAE5F8 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		158CBC6124C4EA2900BAE5F8 /* IntegrationTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTestCase.swift; sourceTree = "<group>"; };
 		158CBC6424C4EAB300BAE5F8 /* IdentifierViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierViewProtocol.swift; sourceTree = "<group>"; };
 		158CBC6624C4EAF800BAE5F8 /* StubsNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubsNetworking.swift; sourceTree = "<group>"; };
@@ -204,10 +198,13 @@
 		15A6D76723F0591400B0513A /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		15A6D76923F0591E00B0513A /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
 		15A6D76B23F05B1D00B0513A /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
-		15E0A70024C5057600F5C2A5 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
-		15E0A70124C5057600F5C2A5 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		15E0A70324C5057600F5C2A5 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
-		15E0A70424C5057600F5C2A5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		15DFEAE224C50FFC00FDD2C2 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
+		15DFEAE324C50FFC00FDD2C2 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		15DFEAE424C50FFC00FDD2C2 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		15DFEAE524C50FFC00FDD2C2 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		15DFEAE624C50FFC00FDD2C2 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		15DFEAE724C50FFC00FDD2C2 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		15DFEAE824C50FFC00FDD2C2 /* KIF.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KIF.framework; path = Carthage/Build/iOS/KIF.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,10 +212,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15E0A70924C5057600F5C2A5 /* RxSwift.framework in Frameworks */,
-				15E0A70824C5057600F5C2A5 /* RxRelay.framework in Frameworks */,
-				15E0A70624C5057600F5C2A5 /* RxCocoa.framework in Frameworks */,
-				15E0A70524C5057600F5C2A5 /* RxBlocking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				158CBC7B24C4F46700BAE5F8 /* KIF.framework in Frameworks */,
+				15DFEAE924C5100200FDD2C2 /* KIF.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,12 +533,13 @@
 		15A010E723EF713B00FF8F9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				15E0A70024C5057600F5C2A5 /* RxBlocking.framework */,
-				15E0A70124C5057600F5C2A5 /* RxCocoa.framework */,
-				15E0A70324C5057600F5C2A5 /* RxRelay.framework */,
-				15E0A70424C5057600F5C2A5 /* RxSwift.framework */,
-				158CBC5F24C4E84A00BAE5F8 /* OHHTTPStubs.framework */,
-				158CBC4E24C4DF9800BAE5F8 /* KIF.framework */,
+				15DFEAE824C50FFC00FDD2C2 /* KIF.framework */,
+				15DFEAE224C50FFC00FDD2C2 /* OHHTTPStubs.framework */,
+				15DFEAE324C50FFC00FDD2C2 /* RxBlocking.framework */,
+				15DFEAE524C50FFC00FDD2C2 /* RxCocoa.framework */,
+				15DFEAE624C50FFC00FDD2C2 /* RxRelay.framework */,
+				15DFEAE724C50FFC00FDD2C2 /* RxSwift.framework */,
+				15DFEAE424C50FFC00FDD2C2 /* RxTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -562,13 +556,15 @@
 				158076EF23EF12F0007A6711 /* Resources */,
 				1580774423EF56BF007A6711 /* SwiftLint */,
 				1530268C23EF761D00B4F2D0 /* Embed Frameworks */,
-				1530268F23EF763C00B4F2D0 /* Carthage */,
+				15DFEAEA24C5104000FDD2C2 /* Carthage */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = GitHubTest;
+			packageProductDependencies = (
+			);
 			productName = GitHubTest;
 			productReference = 158076F123EF12F0007A6711 /* GitHubTest.app */;
 			productType = "com.apple.product-type.application";
@@ -643,6 +639,8 @@
 				Base,
 			);
 			mainGroup = 158076E823EF12F0007A6711;
+			packageReferences = (
+			);
 			productRefGroup = 158076F223EF12F0007A6711 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -695,26 +693,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1530268F23EF763C00B4F2D0 /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-			);
-			name = Carthage;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
-		};
 		1580774423EF56BF007A6711 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -743,6 +721,27 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/KIF.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/OHHTTPStubs.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		15DFEAEA24C5104000FDD2C2 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
@@ -981,6 +980,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RDTR6557FX;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -995,6 +995,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = bruno.GitHubTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GitHubTest/GitHubTest-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1005,6 +1006,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RDTR6557FX;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1019,6 +1021,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = bruno.GitHubTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GitHubTest/GitHubTest-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
