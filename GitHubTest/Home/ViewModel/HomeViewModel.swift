@@ -47,7 +47,7 @@ class HomeViewModel: Stepper {
     }
     
     func showRepoDetail(with repo: RepositoryElement) {
-        selectedStep.accept(.detail(repo))
+        navigate(to: .detail(repo))
     }
     
     func fetchFilteredRepoList(values: [String]) {
@@ -134,6 +134,10 @@ class HomeViewModel: Stepper {
     }
     
     func showFilters() {
-        selectedStep.accept(.filter)
+        navigate(to: .filter)
+    }
+    
+    func navigate(to screen: HomeViewModelSteps) {
+        selectedStep.accept(screen)
     }
 }
