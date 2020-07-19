@@ -64,30 +64,17 @@ class HomeViewModelTest: XCTestCase {
         XCTAssertNotNil(viewModel)
         XCTAssertNotNil(viewModel?.homeService)
         
-        let expectation = self.expectation(description: "Repo request")
+        let mockedModel = try? JSONModelFactory.makeModel(Repository.self, fromJSON: "repo_list")
+        viewModel?.repoList = mockedModel!
         
-        //not using any mock, i didn't had time to implement it
-        viewModel?.homeService.getRepos(onSuccess: { [weak self] repos in
-            guard let self = self else {
-                XCTFail()
-                return
-            }
-            
-            XCTAssertNotNil(repos)
-            XCTAssertGreaterThan(repos.count, 0, "repo?s must be greater than 0")
-            XCTAssertNotNil(self.viewModel?.numberOfRepos)
-            XCTAssertNotNil(self.viewModel?.fetchList)
-            XCTAssertNotNil(self.viewModel?.filteredList)
-            XCTAssertNotNil(self.viewModel?.repoList)
-            XCTAssertNotNil(self.viewModel?.numberOfRepos)
-            XCTAssertEqual(self.viewModel?.filteredList.count, 0, "filtered repos must be 0 at this point")
-            expectation.fulfill()
-            
-        }) { _ in
-            XCTFail()
-        }
-        
-        waitForExpectations(timeout: 20, handler: nil)
+        XCTAssertNotNil(mockedModel)
+        XCTAssertGreaterThan(mockedModel?.count ?? 0, 0, "repo?s must be greater than 0")
+        XCTAssertNotNil(self.viewModel?.numberOfRepos)
+        XCTAssertNotNil(self.viewModel?.fetchList)
+        XCTAssertNotNil(self.viewModel?.filteredList)
+        XCTAssertNotNil(self.viewModel?.repoList)
+        XCTAssertNotNil(self.viewModel?.numberOfRepos)
+        XCTAssertEqual(self.viewModel?.filteredList.count, 0, "filtered repos must be 0 at this point")
     }
 
     override func tearDown() {
