@@ -8,7 +8,7 @@
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "YES"
+            buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
             buildForAnalyzing = "NO">
@@ -73,24 +73,6 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       queueDebuggingEnabled = "No">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "158076F023EF12F0007A6711"
-            BuildableName = "GitHubTest.app"
-            BlueprintName = "GitHubTest"
-            ReferencedContainer = "container:GitHubTest.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
-   </LaunchAction>
-   <ProfileAction
-      buildConfiguration = "Release"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      savedToolIdentifier = ""
-      useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES"
-      enableTestabilityWhenProfilingTests = "No">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
@@ -100,6 +82,14 @@
             ReferencedContainer = "container:GitHubTest.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+   </LaunchAction>
+   <ProfileAction
+      buildConfiguration = "Release"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      debugDocumentVersioning = "YES"
+      enableTestabilityWhenProfilingTests = "No">
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

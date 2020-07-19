@@ -169,6 +169,7 @@
 		158CBC5424C4E19400BAE5F8 /* GitHubTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		158CBC5624C4E19400BAE5F8 /* GitHubTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTestUITests.swift; sourceTree = "<group>"; };
 		158CBC5824C4E19400BAE5F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		158CBC5F24C4E84A00BAE5F8 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		1592C72D23F07CF1007C321C /* RepoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCollectionViewCell.swift; sourceTree = "<group>"; };
 		1592C72E23F07CF1007C321C /* RepoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoCollectionViewCell.xib; sourceTree = "<group>"; };
 		1592C73323F0943D007C321C /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
@@ -492,6 +493,7 @@
 		15A010E723EF713B00FF8F9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				158CBC5F24C4E84A00BAE5F8 /* OHHTTPStubs.framework */,
 				158CBC4E24C4DF9800BAE5F8 /* KIF.framework */,
 				1530269023EF7B1900B4F2D0 /* RxRelay.framework */,
 				15A010F123EF749900FF8F9C /* RxCocoa.framework */,
