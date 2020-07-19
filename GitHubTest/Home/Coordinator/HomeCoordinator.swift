@@ -48,8 +48,7 @@ final class HomeCoordinator: BaseCoordinator {
             }).disposed(by: disposeBag)
         
         view = HomeViewController(viewModel: viewModel)
-        guard let view = view else { return }
-        navigation = IMNavigationViewController(rootViewController: view)
+        navigation = IMNavigationViewController(rootViewController: view!)
         window.rootViewController = navigation
     }
     

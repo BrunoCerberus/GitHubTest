@@ -9,7 +9,7 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>GitHubTestUITests.xcscheme_^#shared#^_</key>
+		<key>GitHubTestUITesting.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
@@ -33,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>158CBC5324C4E19400BAE5F8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>158CBC6F24C4F37500BAE5F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
