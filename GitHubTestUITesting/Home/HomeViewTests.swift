@@ -28,17 +28,32 @@ extension HomeViewTests: UITestLoadViewProtocol {
 extension HomeViewTests: UITestVisibilityProtocol {
     func testElementsExists() {
         self.loadView()
+        
+        XCTAssertNotNil(self.tester().usingIdentifier(HomeViewElements.home.identifier))
+        XCTAssertNotNil(self.tester().usingIdentifier(HomeViewElements.filterButton.identifier))
+        XCTAssertNotNil(self.tester().usingLabel(HomeViewElements.homeTitle.label))
     }
 }
 
 extension HomeViewTests: UITestElementTypeProtocol {
     func testElementsIsDesignSystem() {
         self.loadView()
+        
+        XCTAssertNotNil(self.tester().usingIdentifier(HomeViewElements.home.identifier)?.view as? UICollectionView)
+        XCTAssertNotNil(self.tester().usingIdentifier(HomeViewElements.filterButton.identifier)?.view)
+        XCTAssertNotNil(self.tester().usingIdentifier(HomeViewElements.homeTitle.label)?.view)
     }
 }
 
 extension HomeViewTests: UITestInteractableProtocol {
     func testElementsIsTappable() {
         self.loadView()
+        
+        self.tester().usingIdentifier(HomeViewElements.filterButton.identifier)?.waitForTappableView()
+        self.tester().usingIdentifier(HomeViewElements.home.identifier)?.waitForTappableView()
+        self.tester().usingIdentifier(HomeViewElements.home.identifier)?.swipe(in: .down)
+        self.tester().usingIdentifier(HomeViewElements.home.identifier)?.swipe(in: .up)
+        self.tester().usingIdentifier(HomeViewElements.home.identifier)?.pullToRefresh(withDuration: .inAboutTwoSeconds)
+        self.tester().usingIdentifier(HomeViewElements.filterButton.identifier)?.tap()
     }
 }

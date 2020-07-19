@@ -10,6 +10,7 @@ import Foundation
 
 enum HomeViewElements {
     case home
+    case filterButton
     
     case homeTitle
 }
@@ -19,6 +20,8 @@ extension HomeViewElements: IdentifierViewProtocol {
         switch self {
         case .home:
             return "homeCollection"
+        case .filterButton:
+            return "filterButton"
         default:
             return ""
         }

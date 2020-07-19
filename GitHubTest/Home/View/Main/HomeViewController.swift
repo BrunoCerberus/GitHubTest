@@ -42,6 +42,7 @@ final class HomeViewController: BaseViewController {
         
         viewModel.delegate = self
         title = "GitHub"
+        homeCollectionView.accessibilityIdentifier = "homeCollection"
         
         setup()
     }
@@ -77,7 +78,7 @@ final class HomeViewController: BaseViewController {
                                            style: .done,
                                            target: self,
                                            action: nil)
-        
+        filterButton.accessibilityIdentifier = "filterButton"
         filterButton
             .rx
             .tap
