@@ -157,6 +157,7 @@
 		158CBC3824C3A52200BAE5F8 /* ClassNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameProtocol.swift; sourceTree = "<group>"; };
 		158CBC4924C4D26C00BAE5F8 /* repo_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = repo_list.json; sourceTree = "<group>"; };
 		158CBC4B24C4D28200BAE5F8 /* JSONModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONModelFactory.swift; sourceTree = "<group>"; };
+		158CBC4E24C4DF9800BAE5F8 /* KIF.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KIF.framework; path = Carthage/Build/iOS/KIF.framework; sourceTree = "<group>"; };
 		1592C72D23F07CF1007C321C /* RepoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCollectionViewCell.swift; sourceTree = "<group>"; };
 		1592C72E23F07CF1007C321C /* RepoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoCollectionViewCell.xib; sourceTree = "<group>"; };
 		1592C73323F0943D007C321C /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
@@ -462,6 +463,7 @@
 		15A010E723EF713B00FF8F9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				158CBC4E24C4DF9800BAE5F8 /* KIF.framework */,
 				1530269023EF7B1900B4F2D0 /* RxRelay.framework */,
 				15A010F123EF749900FF8F9C /* RxCocoa.framework */,
 				15A010ED23EF749500FF8F9C /* RxSwift.framework */,
