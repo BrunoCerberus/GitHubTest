@@ -266,18 +266,10 @@
 		150F3C7B23F3845F001BE5A7 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
-				150F3C7C23F38489001BE5A7 /* Cells */,
 				1592C73323F0943D007C321C /* FiltersViewController.swift */,
 				1592C73423F0943D007C321C /* FiltersViewController.xib */,
 			);
 			path = Filter;
-			sourceTree = "<group>";
-		};
-		150F3C7C23F38489001BE5A7 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		150F3C7D23F38494001BE5A7 /* Cells */ = {
