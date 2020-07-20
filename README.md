@@ -6,7 +6,7 @@ Project almost finished, some points are different from the layout, but due the 
 ## Requirements for running this project
 - Xcode 11.6
 - SwiftLint
-- iOS 11+
+- iOS 13+
 - Swift 5.2.4+
  
 ## Development Roadmap
