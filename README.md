@@ -12,6 +12,10 @@ I implemented the TableView in two ways:
  - The first one was in the classic way, using UITableViewDelegate and UITableViewDataSource in the HomeViewController
  - The second was implemented using RxSwift and RxCocoa (Reactive) in the RepoDetailViewController
  
+ The communication between controllers and cells or controllers and ViewModel are via delegate, 
+  and between ViewModels and Coordinator are reactive using BehaviorRelay's (in the old version of this project, ViewModels and Coordinator 
+   communicated via delegate)
+ 
 ## Important ⚠️
 Run in the simulator, for some reason when it runs on a physical device a parse error occurs, didn't have time to find out. 
 
