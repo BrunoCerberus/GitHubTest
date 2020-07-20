@@ -20,6 +20,7 @@ Run in the simulator, for some reason when it runs on a physical device a parse 
 - SwiftLint
 - iOS 13+
 - Swift 5.2.4+
+- Carthage 0.35.0+ (only if necessary)
  
 ## Development Roadmap
 
