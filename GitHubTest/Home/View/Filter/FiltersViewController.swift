@@ -29,6 +29,7 @@ final class FiltersViewController: UIViewController {
         defaultBackButton()
         setup()
         setupBind()
+        configureAccessibility()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +51,13 @@ final class FiltersViewController: UIViewController {
                                                selector: #selector(cleanFilters),
                                                name: .pullToRefresh,
                                                object: nil)
+    }
+    
+    private func configureAccessibility() {
+        applyButton.isAccessibilityElement = true
+        applyButton.accessibilityTraits = UIAccessibilityTraits.button
+        applyButton.accessibilityLabel = "Apply Filter Button"
+        applyButton.accessibilityHint = "Apply to filter the repository list"
     }
     
     private func setup() {
@@ -74,6 +82,10 @@ final class FiltersViewController: UIViewController {
                                           target: self,
                                           action: #selector(cleanFilters))
         clearButton.tintColor = .imBarButtonItems
+        clearButton.isAccessibilityElement = true
+        clearButton.accessibilityTraits = UIAccessibilityTraits.button
+        clearButton.accessibilityLabel = "Clear Button"
+        clearButton.accessibilityHint = "Clear the selected filter buttons"
         navigationItem.rightBarButtonItem = clearButton
     }
     

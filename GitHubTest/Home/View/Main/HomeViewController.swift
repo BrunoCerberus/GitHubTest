@@ -79,6 +79,10 @@ final class HomeViewController: BaseViewController {
                                            target: self,
                                            action: nil)
         filterButton.accessibilityIdentifier = "filterButton"
+        filterButton.isAccessibilityElement = true
+        filterButton.accessibilityTraits = UIAccessibilityTraits.button
+        filterButton.accessibilityLabel = "Filter Button"
+        filterButton.accessibilityHint = "Filter the list of repositories"
         filterButton
             .rx
             .tap
