@@ -50,6 +50,11 @@ Run in the simulator, for some reason when it runs on a physical device a parse 
 - [x] Filter
 - [x] Detail
 
+## Dependencies used
+- RxSwift
+- KIF (UI Testing framework)
+- OHHTTPStubs (stub network responses)
+
 ## Author
 
 | [<img src="https://avatars3.githubusercontent.com/u/10541956?s=400&u=eba6b61af608c7dbc1d36cbf2abacb880d9c6a71&v=4" width="48"><br><sub>@BrunoCerberus</sub>](https://github.com/BrunoCerberus) |
