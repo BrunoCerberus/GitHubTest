@@ -31,7 +31,7 @@ Project almost finished, some points are different from the layout, but due the 
 - [x] Pull-to-refresh
 - [x] Notification Center
 - [x] Grand Central Dispatch
-- [ ] Accessibility
+- [x] Accessibility (Only VoiceOver to some elements)
 
 ## Features
 - [x] Home
