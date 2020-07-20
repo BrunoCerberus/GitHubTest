@@ -17,7 +17,7 @@ Project almost finished, some points are different from the layout, but due the 
 - [x] Xib
 - [x] Coordinator
 - [x] Unit Tests
-- [ ] UI Testing
+- [x] UI Testing
 - [x] Network layer
 - [x] GitHub Developer V3 API
 - [x] Dependencies Manager (Carthage)
