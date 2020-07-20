@@ -11,6 +11,9 @@ Schemes:
 I implemented the TableView in two ways:
  - The first one was in the classic way, using UITableViewDelegate and UITableViewDataSource in the HomeViewController
  - The second was implemented using RxSwift and RxCocoa (Reactive) in the RepoDetailViewController
+ 
+## Important ⚠️
+Run in the simulator, for some reason when it runs on a physical device a parse error occurs, didn't have time to find out. 
 
 ## Requirements for running this project
 - Xcode 11.6
