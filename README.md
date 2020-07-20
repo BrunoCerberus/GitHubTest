@@ -1,7 +1,16 @@
 # GitHubTest
 
 ## Observations before start
-Project almost finished, some points are different from the layout, but due the short deadline it was the best i could do, hope you like it 😁. Is for some reason, the request comes not authorized because of a OAUTH token, use this token `99a4bc3599e653a1593a2052a8e45643ceee2e37` instead in `BaseService.swift`, just change the value of the `ApiKey`and use the new one, if the problem still persists, leave the variable value as empty `""`. This hapens because there is a security system on GitHub that removes every OAUTH token that appears in a public repository.
+If for some reason, the request comes not authorized because of a OAUTH token, use this token `99a4bc3599e653a1593a2052a8e45643ceee2e37` instead in `BaseService.swift`, just change the value of the `ApiKey`and use the new one, if the problem still persists, leave the variable value as empty `""`. This hapens because there is a security system on GitHub that removes every OAUTH token that appears in a public repository. I separated the the app in three schemes, one for normal using, and the other two to Unit and UI testing. The Carthage won't be necessary since it already includes all compiled dependencies in the repository, but if something goes wrong with any dependecie, just run `carthage update --platform iOS`
+
+Schemes:
+ - GitHubTest (normal using)
+ - GitHubTestUnitTest (Unit tests)
+ - GitHubTestUITesting (UI testing with KIF)
+
+I implemented the TableView in two ways:
+ - The first one was in the classic way, using UITableViewDelegate and UITableViewDataSource in the HomeViewController
+ - The second was implemented using RxSwift and RxCocoa (Reactive) in the RepoDetailViewController
 
 ## Requirements for running this project
 - Xcode 11.6
@@ -26,7 +35,7 @@ Project almost finished, some points are different from the layout, but due the 
 - [x] RxSwift
 - [x] High Order Function
 - [x] Custom components
-- [x] Persistence with UserDefaults
+- [x] UserDefaults
 - [x] Infinite Scrolling
 - [x] Pull-to-refresh
 - [x] Notification Center
