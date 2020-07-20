@@ -47,7 +47,10 @@ final class RepoDetailViewController: BaseViewController {
     }
     
     private func setupBind() {
-        detailTableView.tableFooterView = UIView()
+        detailTableView.tableFooterView = UIView(frame: CGRect(x: 0,
+                                                               y: 0,
+                                                               width: detailTableView.frame.size.width,
+                                                               height: 1))
         shareButton
             .rx
             .tap

@@ -13,7 +13,7 @@ class ReadMeTableViewCell: BaseTableViewCell {
     @IBOutlet weak var readMeLabel: UILabel!
     
     func setup(repo: RepositoryElement) {
-        
+        readMeLabel.text = repo.welcomeDescription
     }
     
     override func bindData(_ data: Any?...) {
