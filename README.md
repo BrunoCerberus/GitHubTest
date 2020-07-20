@@ -56,9 +56,9 @@ Run in the simulator, for some reason when it runs on a physical device a parse 
 - [x] Detail
 
 ## Dependencies used
-- RxSwift
-- KIF (UI Testing framework)
-- OHHTTPStubs (stub network responses)
+- RxSwift https://github.com/ReactiveX/RxSwift
+- KIF (UI Testing framework) https://github.com/kif-framework/KIF
+- OHHTTPStubs (stub network responses) https://github.com/AliSoftware/OHHTTPStubs
 
 ## Author
 
