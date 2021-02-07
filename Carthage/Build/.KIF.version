@@ -1,10 +1,17 @@
 {
-  "commitish" : "v3.7.9",
+  "commitish" : "v3.7.15",
   "iOS" : [
     {
+      "hash" : "ad170b39d5b4f9fc81e29226dd881e72643597ee1d2a31d9de8860fad9815742",
       "name" : "KIF",
-      "hash" : "0a17fffbe78f60f751456c0a0b404d578cf12e8f8d51ce4644204c69d9426ee8",
-      "linking" : "dynamic"
+      "container" : "KIF.xcframework",
+      "identifier" : "ios-arm64_armv7"
+    },
+    {
+      "hash" : "ceb0fb756c5692abedbef027bc138df3409ed2f1e620ea141e55f014cf6162f3",
+      "name" : "KIF",
+      "container" : "KIF.xcframework",
+      "identifier" : "ios-arm64_i386_x86_64-simulator"
     }
   ]
 }

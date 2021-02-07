@@ -13,7 +13,7 @@ protocol FilterCollectionViewDelegate: AnyObject {
 }
 
 class FilterCollectionViewCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var filterLabel: UILabel!
     
     weak var delegate: FilterCollectionViewDelegate?
@@ -23,7 +23,7 @@ class FilterCollectionViewCell: UICollectionViewCell {
     func setup(filterName: String) {
         filterLabel.text = filterName
     }
-
+    
     @IBAction func closeFilter(_ sender: Any) {
         delegate?.removeFilterWith(name: filterLabel.text ?? "")
     }

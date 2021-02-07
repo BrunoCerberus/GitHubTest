@@ -19,7 +19,7 @@ extension Date {
         case longDateTimeGMTQuickSale = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
         case longDateTimeGMTRewards = "yyyy-MM-dd'T'HH:mm:ss"
         case longDateTimeGMTServices = "yyyy-MM-dd HH:mm:ss.SSS"
-        case longDateTimeGMTShellbox = "yyyy-MM-dd'T'HH:mm:ss.SSS" //2020-01-21T13:08:33.841
+        case longDateTimeGMTShellbox = "yyyy-MM-dd'T'HH:mm:ss.SSS" // 2020-01-21T13:08:33.841
         case fullDateWithTimeZone = "yyyy-MM-dd'T'HH:mm:ssZ"
         case shortDayMonthDate = "dd MMM"
         case dayMonthDate = "dd/MM"

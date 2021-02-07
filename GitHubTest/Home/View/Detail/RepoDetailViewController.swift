@@ -11,7 +11,7 @@ import RxCocoa
 import RxSwift
 
 final class RepoDetailViewController: BaseViewController {
-
+    
     @IBOutlet weak var detailTableView: UITableView!
     @IBOutlet weak var shareButton: UIButton!
     
@@ -73,7 +73,7 @@ final class RepoDetailViewController: BaseViewController {
                 let cell = cv.dequeueBaseCell(with: element.cellType(), for: indexPath)
                 cell.bindData(element)
                 return cell
-        }.disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
     }
     
     private func registerCells() {

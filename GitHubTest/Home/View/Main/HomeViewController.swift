@@ -67,7 +67,7 @@ final class HomeViewController: BaseViewController {
     private func filterRepos() {
         let indexPath = IndexPath(row: 0, section: HomeSection.filter.rawValue)
         if let carousel = homeCollectionView.cellForItem(at: indexPath) as? FilterCarouselCollectionViewCell {
-            let filter: [String] = carousel.tasks.value.count > 0 ? carousel.tasks.value.map {$0.title} : [""]
+            let filter: [String] = !carousel.tasks.value.isEmpty ? carousel.tasks.value.map {$0.title} : [""]
             viewModel.fetchFilteredRepoList(values: filter)
         }
     }

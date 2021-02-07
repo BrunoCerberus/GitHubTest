@@ -9,7 +9,7 @@
 import UIKit
 
 class RepoCollectionViewCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var repoImage: UIImageView!
@@ -34,7 +34,7 @@ class RepoCollectionViewCell: UICollectionViewCell {
         followersLabel.textColor = .white
         issuesLabel.textColor = .white
         lastUpdatedLabel.textColor = .white
-            
+        
     }
     
     func setup(repo: RepositoryElement, index: Int) {

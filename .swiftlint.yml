@@ -15,7 +15,7 @@ opt_in_rules:
   # - closure_spacing
   # - collection_alignment
   # - discouraged_optional_boolean
-  # - empty_count
+  - empty_count
   # - empty_string
   # - empty_xctest_method
   # - explicit_init
@@ -59,7 +59,6 @@ opt_in_rules:
 
 disabled_rules:
   - trailing_whitespace
-  - cyclomatic_complexity
 
 force_cast: warning
 

@@ -24,7 +24,7 @@ final class FiltersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         title = "Filtrar"
         defaultBackButton()
         setup()

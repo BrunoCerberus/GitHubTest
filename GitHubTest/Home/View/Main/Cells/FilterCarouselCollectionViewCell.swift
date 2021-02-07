@@ -51,30 +51,29 @@ class FilterCarouselCollectionViewCell: UICollectionViewCell {
                     self?.filters.append(task)
                 }
                 self?.tasks.accept(self?.filters ?? [])
-                if self?.tasks.value.count == 0 {
+                if self?.tasks.value.isEmpty ?? false {
                     self?.delegate?.performBatchUpdates(height: 1)
                 }
-        }).disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
     }
     
     private func bindCollectionView() {
-        
         tasks.asObservable()
             .bind(to: carouselFilterCollectionView
-                .rx
-                .items(cellIdentifier: "FilterCollectionViewCell",
-                       cellType: FilterCollectionViewCell.self)) { [weak self] _, element, cell in
+                    .rx
+                    .items(cellIdentifier: "FilterCollectionViewCell",
+                           cellType: FilterCollectionViewCell.self)) { [weak self] _, element, cell in
                 
-                        cell.setup(filterName: element.title)
-                        cell.delegate = self
-                        self?.delegate?.performBatchUpdates(height: 56)
+                cell.setup(filterName: element.title)
+                cell.delegate = self
+                self?.delegate?.performBatchUpdates(height: 56)
                 
-        }.disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
     }
 }
 
 extension FilterCarouselCollectionViewCell: UICollectionViewDelegateFlowLayout {
-
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -84,17 +83,17 @@ extension FilterCarouselCollectionViewCell: UICollectionViewDelegateFlowLayout {
         cell?.setNeedsLayout()
         cell?.layoutIfNeeded()
         let size: CGSize = (cell?.contentView
-            .systemLayoutSizeFitting(UIView.layoutFittingCompressedSize))!
+                                .systemLayoutSizeFitting(UIView.layoutFittingCompressedSize))!
         return CGSize(width: size.width, height: 36)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-
+        
         return UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -107,7 +106,7 @@ extension FilterCarouselCollectionViewCell: FilterCollectionViewDelegate {
         filters.remove(object: Filter(title: name))
         tasks.accept(self.filters)
         UserDefaults.standard.set(false, forKey: "\(name)-selected")
-        if tasks.value.count == 0 {
+        if tasks.value.isEmpty {
             delegate?.performBatchUpdates(height: 1)
         }
     }
