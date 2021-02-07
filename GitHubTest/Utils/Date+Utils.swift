@@ -9,7 +9,7 @@
 import UIKit
 
 extension Date {
-    enum FormatStyle: String {
+    public enum FormatStyle: String {
         case longDateTime = "dd/MM/yyyy 'às' HH:mm"
         case longDateTimeDetailed = "dd/MM/yyyy 'às' HH:mm:SS"
         case shortDate = "dd/MM/yyyy"
