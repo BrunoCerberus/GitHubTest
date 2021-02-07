@@ -7,26 +7,72 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class BaseViewController: UIViewController {
+class VCComponents {
+    var disposeBag: DisposeBag?  = DisposeBag()
+}
+
+protocol BaseViewControllerProtocol {
+    var base: VCComponents { get }
+}
+
+class BaseViewController: UIViewController, BaseViewControllerProtocol {
+    
+    var base: VCComponents = VCComponents()
+    
+    internal var baseViewModel: BaseViewModelProtocol?
+    private(set) var isVisibleHUD = PublishSubject<Bool>()
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.edgesForExtendedLayout           = []
-        self.extendedLayoutIncludesOpaqueBars = false
+        bindProperties()
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    private func bindProperties() {
+        guard let baseDisposeBag = base.disposeBag else { return }
+        
+        isVisibleHUD.subscribe(onNext: { [weak self] isLoading in
+            if isLoading {
+                self?.showHUD()
+            } else {
+                self?.hideHUD()
+            }
+        }).disposed(by: baseDisposeBag)
+        
+        self.baseViewModel?
+            .stateError
+            .drive(onNext: { [weak self] (state, message) in
+                switch state {
+                case .banner: break
+                case .alert:
+                    self?.showBasicAlert(title: message, message: "")
+                case .placeHolder: break
+                default: break
+                }
+            }).disposed(by: baseDisposeBag)
+        
+        self.baseViewModel?
+            .successDriver
+            .drive(onNext: { [weak self] (receivedSuccess) in
+                if receivedSuccess {
+                    self?.removeErrorView()
+                }
+            }).disposed(by: baseDisposeBag)
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
+    func removeErrorView() {
+        
     }
     
     func displayGenericError() {
@@ -37,22 +83,28 @@ class BaseViewController: UIViewController {
         }
     }
     
-    private func configureErrorViewFullScreenAnchors(_ errorView: UIView) {
-        errorView.translatesAutoresizingMaskIntoConstraints = false
-        errorView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        errorView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        errorView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        errorView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
-    func setupNavigationWithCloseButton() {
-        navigationController?.navigationBar.barTintColor = .imNavigationBarTintColor
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.isTranslucent = false
-        setupDismissLeftBarButtonItem()
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // fixing keyboard toolbar
+        view.endEditing(true)
     }
     
     deinit {
-        debugPrint("DEINIT: \(self)")
+        debug("#### >>>> deinit: \(self)")
+    }
+}
+
+// Delegate to inform the coordinator that the childFlow was dismissed
+extension BaseViewController: UINavigationControllerDelegate {}
+
+extension BaseViewController: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+                           shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }

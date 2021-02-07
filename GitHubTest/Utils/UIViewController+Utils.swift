@@ -14,6 +14,23 @@ extension UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func showBasicAlert(title: String, message: String, titleCancelButton: String = "OK") {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: titleCancelButton, style: .default, handler: nil)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func showHUD(_ view: UIView? = nil) {
+        HUD.show(view)
+    }
+    
+    func hideHUD() {
+        HUD.hide(afterDelay: 0)
+    }
+    
     func setupDismissLeftBarButtonItem(image: UIImage? = nil) {
         let closeBarButtonItem = UIBarButtonItem(
             image: image != nil ? image : #imageLiteral(resourceName: "BTN_CLOSE_WHITE").withRenderingMode(.alwaysOriginal),

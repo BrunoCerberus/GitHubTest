@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public class BaseTableViewCell: UITableViewCell {
     func bindData(_ data: Any?...) {}
