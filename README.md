@@ -20,11 +20,11 @@ I implemented the TableView in two ways:
 Run in the simulator, for some reason when it runs on a physical device a parse error occurs, didn't have time to find out. 
 
 ## Requirements for running this project
-- Xcode 11.6
+- Xcode 12.2
 - SwiftLint
-- iOS 13+
-- Swift 5.2.4+
-- Carthage 0.35.0+ (only if necessary)
+- iOS 14+
+- Swift 5.3.1
+- Carthage 0.37.0+ (only if necessary)
  
 ## Development Roadmap
 
@@ -72,7 +72,7 @@ All the code available under the MIT license. See [LICENSE](LICENSE).
 ```
 MIT License
 
-Copyright (c) 2020 Bruno Lopes de Mello
+Copyright (c) 2021 Bruno Lopes de Mello
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
